@@ -43,9 +43,12 @@ function App() {
   // Contact Modal State
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  // Prevent scroll when modal is open
+  // Company Details Modal State
+  const [activeCompanyLogoModal, setActiveCompanyLogoModal] = useState<{ name: string, logo: string, desc: string } | null>(null);
+
+  // Prevent scroll when modals are open
   useEffect(() => {
-    if (isContactOpen) {
+    if (isContactOpen || activeCompanyLogoModal) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
@@ -53,7 +56,7 @@ function App() {
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isContactOpen]);
+  }, [isContactOpen, activeCompanyLogoModal]);
 
 
 
@@ -294,9 +297,24 @@ function App() {
               <div className="timeline-row-alt">
                 <div className="timeline-col-left">
                   <div className="timeline-content-alt">
-                    <span className="timeline-period-alt">abr de 2026 — O momento</span>
-                    <h3 className="timeline-role-alt">QA Engineer Junior</h3>
-                    <span className="timeline-company-alt">Centrus Inteligência Artificial</span>
+                    <div className="timeline-header-alt">
+                      <div 
+                        className="timeline-logo-card clickable"
+                        onClick={() => setActiveCompanyLogoModal({
+                          name: "Centrus Inteligência Artificial",
+                          logo: "/logo-centrus.png",
+                          desc: "Desenvolvemos soluções de inteligência artificial para farmácias que querem transformar seu atendimento digital em um ativo estratégico."
+                        })}
+                        title="Clique para ver detalhes"
+                      >
+                        <img src="/logo-centrus.png" alt="Centrus" />
+                      </div>
+                      <div>
+                        <span className="timeline-period-alt">abr de 2026 — O momento</span>
+                        <h3 className="timeline-role-alt">QA Engineer Junior</h3>
+                        <span className="timeline-company-alt">Centrus Inteligência Artificial</span>
+                      </div>
+                    </div>
                     <p className="timeline-desc-alt">Atuação focada em assegurar a máxima qualidade de software através do planejamento e execução de testes manuais e automatizados. Responsável por identificar falhas estruturais, criar cenários complexos de validação, documentar casos de teste (test cases) e colaborar ativamente com o time de desenvolvimento para garantir entregas eficientes, mitigar riscos e otimizar a experiência final do usuário.</p>
                     <div className="timeline-tags-alt">
                       <span className="ttag-alt">QA Testing</span>
@@ -315,9 +333,24 @@ function App() {
                 <div className="timeline-center-dot-alt"></div>
                 <div className="timeline-col-right">
                   <div className="timeline-content-alt">
-                    <span className="timeline-period-alt">mar de 2025 — O momento</span>
-                    <h3 className="timeline-role-alt">Especialista CX</h3>
-                    <span className="timeline-company-alt">Pulse Client Experts</span>
+                    <div className="timeline-header-alt">
+                      <div 
+                        className="timeline-logo-card clickable"
+                        onClick={() => setActiveCompanyLogoModal({
+                          name: "Pulse Client Experts",
+                          logo: "/logo-pulse.png",
+                          desc: "A Pulse Client Experts (anteriormente conhecida como SX Negócios) é uma grande plataforma de experiência do cliente (CX) e soluções de negócios do grupo Santander, especializada em serviços de atendimento ao cliente, vendas e suporte por voz e chat"
+                        })}
+                        title="Clique para ver detalhes"
+                      >
+                        <img src="/logo-pulse.png" alt="Pulse Client Experts" />
+                      </div>
+                      <div>
+                        <span className="timeline-period-alt">mar de 2025 — O momento</span>
+                        <h3 className="timeline-role-alt">Especialista CX</h3>
+                        <span className="timeline-company-alt">Pulse Client Experts</span>
+                      </div>
+                    </div>
                     <p className="timeline-desc-alt">Responsável pela gestão do relacionamento com o cliente (CRM) e excelência no atendimento na ponta. Atuação estratégica no setor antifraude, analisando padrões de comportamento, mitigando riscos de segurança e resolvendo problemas complexos com agilidade. Foco total na retenção, fidelização e na construção de uma jornada do cliente segura, fluida e de alto valor.</p>
                     <div className="timeline-tags-alt">
                       <span className="ttag-alt">CX</span>
@@ -333,9 +366,24 @@ function App() {
               <div className="timeline-row-alt">
                 <div className="timeline-col-left">
                   <div className="timeline-content-alt">
-                    <span className="timeline-period-alt">fev de 2026 — abr de 2026</span>
-                    <h3 className="timeline-role-alt">Equipe de Parcerias | B2C</h3>
-                    <span className="timeline-company-alt">AIESEC no Brasil</span>
+                    <div className="timeline-header-alt">
+                      <div 
+                        className="timeline-logo-card clickable"
+                        onClick={() => setActiveCompanyLogoModal({
+                          name: "AIESEC no Brasil",
+                          logo: "/logo-aiesec.png",
+                          desc: "A AIESEC é a maior organização global gerida por jovens, dedicada a desenvolver o potencial de liderança jovem por meio de intercâmbios voluntários e profissionais de impacto social internacional."
+                        })}
+                        title="Clique para ver detalhes"
+                      >
+                        <img src="/logo-aiesec.png" alt="AIESEC" />
+                      </div>
+                      <div>
+                        <span className="timeline-period-alt">fev de 2026 — abr de 2026</span>
+                        <h3 className="timeline-role-alt">Equipe de Parcerias | B2C</h3>
+                        <span className="timeline-company-alt">AIESEC no Brasil</span>
+                      </div>
+                    </div>
                     <p className="timeline-desc-alt">Experiência voluntária voltada ao impacto social e desenvolvimento de parcerias estratégicas no modelo B2C. Atuação na prospecção, negociação e engajamento de partes interessadas, exercitando forte liderança, comunicação persuasiva e habilidades de trabalho em equipe para viabilizar projetos de intercâmbio e desenvolvimento jovem.</p>
                     <div className="timeline-tags-alt">
                       <span className="ttag-alt">Voluntariado</span>
@@ -355,9 +403,24 @@ function App() {
                 <div className="timeline-center-dot-alt"></div>
                 <div className="timeline-col-right">
                   <div className="timeline-content-alt">
-                    <span className="timeline-period-alt">fev de 2023 — out de 2023</span>
-                    <h3 className="timeline-role-alt">Estudante voluntário | A.I League</h3>
-                    <span className="timeline-company-alt">Brain Facens</span>
+                    <div className="timeline-header-alt">
+                      <div 
+                        className="timeline-logo-card clickable"
+                        onClick={() => setActiveCompanyLogoModal({
+                          name: "Brain Facens",
+                          logo: "/logo-brain.png",
+                          desc: "O BRAIN é o núcleo de pesquisa e inovação tecnológica da Faculdade Facens, desenvolvendo projetos práticos aplicados de Inteligência Artificial, Machine Learning, Visão Computacional e IoT."
+                        })}
+                        title="Clique para ver detalhes"
+                      >
+                        <img src="/logo-brain.png" alt="Brain Facens" />
+                      </div>
+                      <div>
+                        <span className="timeline-period-alt">fev de 2023 — out de 2023</span>
+                        <h3 className="timeline-role-alt">Estudante voluntário | A.I League</h3>
+                        <span className="timeline-company-alt">Brain Facens</span>
+                      </div>
+                    </div>
                     <p className="timeline-desc-alt">Imersão prática em ecossistemas de inovação e tecnologia, com forte ênfase em inteligência artificial. Atuação direta no auxílio e concepção de projetos tecnológicos avançados, com profundo aprendizado e aplicação prática de conceitos de Machine Learning. Desenvolvimento contínuo de competências de resolução de problemas e trabalho em equipe em um ambiente de alta colaboração.</p>
                     <div className="timeline-tags-alt">
                       <span className="ttag-alt">Machine Learning</span>
@@ -485,6 +548,20 @@ function App() {
               <Mail size={18} />
               dev.contato@provedor.com
             </a>
+          </div>
+        </div>
+      )}
+      {activeCompanyLogoModal && (
+        <div className="company-modal-overlay" onClick={() => setActiveCompanyLogoModal(null)}>
+          <div className="company-modal-card" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setActiveCompanyLogoModal(null)} aria-label="Fechar">
+              <X size={20} />
+            </button>
+            <div className="company-modal-logo">
+              <img src={activeCompanyLogoModal.logo} alt={activeCompanyLogoModal.name} />
+            </div>
+            <h3 className="company-modal-title">{activeCompanyLogoModal.name}</h3>
+            <p className="company-modal-desc">{activeCompanyLogoModal.desc}</p>
           </div>
         </div>
       )}
