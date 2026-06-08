@@ -40,6 +40,21 @@ function App() {
   // Project Category Filter State
   const [filter, setFilter] = useState<'all' | 'frontend' | 'backend' | 'fullstack'>('all');
 
+  // Contact Modal State
+  const [isContactOpen, setIsContactOpen] = useState(false);
+
+  // Prevent scroll when modal is open
+  useEffect(() => {
+    if (isContactOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isContactOpen]);
+
 
 
   // Mouse Position Tracker (Updates CSS variables on the root document element)
@@ -159,8 +174,7 @@ function App() {
               <li><a href="#home" className="nav-link" onClick={() => setIsMenuOpen(false)}>Início</a></li>
               <li><a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>Trajetória</a></li>
               <li><a href="#projects" className="nav-link" onClick={() => setIsMenuOpen(false)}>Projetos</a></li>
-              <li><a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contato</a></li>
-              <li><a href="#contact" className="nav-link nav-link-highlight" onClick={() => setIsMenuOpen(false)}>Fale Comigo</a></li>
+              <li><a href="#" className="nav-link nav-link-highlight" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); setIsMenuOpen(false); }}>Fale Comigo</a></li>
             </ul>
           </nav>
 
@@ -197,7 +211,7 @@ function App() {
               <a href="#projects" className="btn-cta">
                 Ver Portfólio <ArrowRight size={14} />
               </a>
-              <a href="#contact" className="btn-secondary">Fale Comigo</a>
+              <a href="#" className="btn-secondary" onClick={(e) => { e.preventDefault(); setIsContactOpen(true); }}>Fale Comigo</a>
             </div>
           </div>
         </div>
@@ -435,25 +449,6 @@ function App() {
         </div>
       </section>
 
-      {/* ==========================================
-           FALE COMIGO SECTION (WHITE CARD WITH PAPER PLANE)
-           ========================================== */}
-      <section className="section fale-comigo-section" id="contact">
-        <div className="container">
-          <div className="fale-comigo-card reveal">
-            <div className="paper-plane-wrapper">
-              <Send size={32} className="paper-plane-icon" />
-            </div>
-            <h2 className="fale-comigo-title">Fale Comigo</h2>
-            <p className="fale-comigo-subtitle">
-              Seja para iniciar um novo projeto, tirar dúvidas ou apenas bater um papo sobre tecnologia, meu e-mail está sempre aberto.
-            </p>
-            <a href="mailto:dev.contato@provedor.com" className="fale-comigo-btn">
-              dev.contato@provedor.com
-            </a>
-          </div>
-        </div>
-      </section>
 
       {/* ==========================================
            FOOTER
@@ -473,6 +468,26 @@ function App() {
           </div>
         </div>
       </footer>
+      {isContactOpen && (
+        <div className="contact-modal-overlay" onClick={() => setIsContactOpen(false)}>
+          <div className="fale-comigo-card" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={() => setIsContactOpen(false)} aria-label="Fechar">
+              <X size={20} />
+            </button>
+            <div className="contact-icon-wrapper">
+              <Mail size={32} className="contact-icon" />
+            </div>
+            <h2 className="fale-comigo-title">Fale Comigo</h2>
+            <p className="fale-comigo-subtitle">
+              Seja para iniciar um novo projeto, tirar dúvidas ou apenas bater um papo sobre tecnologia, meu e-mail está sempre aberto.
+            </p>
+            <a href="mailto:dev.contato@provedor.com" className="fale-comigo-btn">
+              <Mail size={18} />
+              dev.contato@provedor.com
+            </a>
+          </div>
+        </div>
+      )}
     </>
   );
 }
