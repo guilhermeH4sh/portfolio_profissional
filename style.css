@@ -195,15 +195,51 @@ button, input, textarea {
 
 .logo {
   font-family: var(--font-title);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.2rem;
+  padding-left: 0;
+  color: #ffffff;
 }
 
-.logo span {
-  color: var(--accent);
+.logo .logo-dot {
+  color: #ffffff;
+  font-weight: 900;
+}
+
+/* Profile Avatar Slot (Google Account Style) */
+.avatar-link {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.avatar-slot {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-slot:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.avatar-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .nav-links {

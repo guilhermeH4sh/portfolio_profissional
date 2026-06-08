@@ -148,8 +148,10 @@ function App() {
            ========================================== */}
       <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
         <div className="container nav-wrapper">
-          <a href="#" className="logo">
-            Guilherme <span className="logo-dot">Ferreira.</span>
+          <a href="#" className="avatar-link" aria-label="Perfil">
+            <div className="avatar-slot">
+              <img src="/logo.png" alt="Logo Guilherme Ferreira" />
+            </div>
           </a>
           
           <nav>
