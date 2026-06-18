@@ -17,65 +17,82 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
     if (!pageView) return;
 
     let frameId: number;
+    let timelineOffsetTop = 0;
+    let timelineHeight = 0;
+    let containerHeight = 0;
+
+    const updateDimensions = () => {
+      const timeline = document.querySelector('.timeline-alt');
+      if (timeline && pageView) {
+        const rect = timeline.getBoundingClientRect();
+        const pageRect = pageView.getBoundingClientRect();
+        timelineOffsetTop = rect.top - pageRect.top + pageView.scrollTop;
+        timelineHeight = rect.height;
+        containerHeight = pageRect.height;
+      }
+    };
+
     const handleScroll = () => {
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(() => {
-        const timeline = document.querySelector('.timeline-alt');
         const progressLine = document.querySelector('.timeline-progress-line') as HTMLElement;
-        if (!timeline) return;
+        if (!progressLine) return;
 
-        const timelineRect = timeline.getBoundingClientRect();
-        const pageViewRect = pageView.getBoundingClientRect();
-        const viewportHeight = pageViewRect.height;
-
-        // 1. Progress Line Height
-        if (progressLine) {
-          const timelineTop = timelineRect.top - pageViewRect.top;
-          const timelineHeight = timelineRect.height;
-          const triggerPoint = viewportHeight / 2;
-          const scrolled = triggerPoint - timelineTop;
-          
-          let progress = scrolled / timelineHeight;
-          progress = Math.max(0, Math.min(1, progress));
-          progressLine.style.height = `${progress * 100}%`;
+        if (timelineHeight === 0) {
+          updateDimensions();
         }
 
-        // 2. Active Card Highlight (closest to viewport center)
-        const cards = timeline.querySelectorAll('.timeline-row-alt');
-        let minDistance = Infinity;
-        let activeCardIdx = -1;
-
-        cards.forEach((card, idx) => {
-          const rect = card.getBoundingClientRect();
-          const cardCenter = rect.top + rect.height / 2;
-          const viewportCenter = pageViewRect.top + viewportHeight / 2;
-          const distance = Math.abs(cardCenter - viewportCenter);
-
-          if (distance < minDistance) {
-            minDistance = distance;
-            activeCardIdx = idx;
-          }
-        });
-
-        cards.forEach((card, idx) => {
-          if (idx === activeCardIdx) {
-            card.classList.add('timeline-card-active');
-          } else {
-            card.classList.remove('timeline-card-active');
-          }
-        });
+        const scrollTop = pageView.scrollTop;
+        const scrolled = (scrollTop + containerHeight / 2) - timelineOffsetTop;
+        
+        let progress = timelineHeight > 0 ? scrolled / timelineHeight : 0;
+        progress = Math.max(0, Math.min(1, progress));
+        
+        const isMobile = window.innerWidth <= 768;
+        progressLine.style.transform = isMobile 
+          ? `scaleY(${progress})` 
+          : `translateX(-50%) scaleY(${progress})`;
       });
     };
 
-    pageView.addEventListener('scroll', handleScroll);
-    // Initial call
-    setTimeout(handleScroll, 50);
+    // Calculate dimensions initially
+    updateDimensions();
+
+    // Observe Scroll & Resize with passive event listeners to avoid blocking paint thread
+    pageView.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', updateDimensions, { passive: true });
+
+    // Setup IntersectionObserver for active card highlight (highlights cards entering middle 10% of viewport)
+    const observerOptions = {
+      root: pageView,
+      rootMargin: '-45% 0px -45% 0px',
+      threshold: 0,
+    };
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('timeline-card-active');
+        } else {
+          entry.target.classList.remove('timeline-card-active');
+        }
+      });
+    }, observerOptions);
+
+    const cards = pageView.querySelectorAll('.timeline-row-alt');
+    cards.forEach((card) => cardObserver.observe(card));
+
+    // Initial trigger
+    handleScroll();
 
     return () => {
       pageView.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateDimensions);
+      cards.forEach((card) => cardObserver.unobserve(card));
+      cardObserver.disconnect();
       cancelAnimationFrame(frameId);
     };
-  }, []);
+  }, [experiences]);
 
   return (
     <div className="tab-scroll-container timeline-container-active">

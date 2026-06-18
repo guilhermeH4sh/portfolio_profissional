@@ -795,25 +795,26 @@ body.modal-open .header {
   content: '';
   position: absolute;
   top: -50%;
-  left: -60%;
+  left: -50%;
   width: 25%;
   height: 200%;
   background: linear-gradient(to right,
       transparent,
       rgba(255, 255, 255, 0.25),
       transparent);
-  transform: rotate(25deg);
+  transform: translateX(-100%) rotate(25deg);
   animation: btnShine 5s infinite ease-in-out;
+  will-change: transform;
 }
 
 @keyframes btnShine {
   0% {
-    left: -60%;
+    transform: translateX(-100%) rotate(25deg);
   }
 
   20%,
   100% {
-    left: 140%;
+    transform: translateX(600%) rotate(25deg);
   }
 }
 
@@ -2105,14 +2106,15 @@ body.modal-open .header {
 .timeline-progress-line {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
   top: 10px;
+  bottom: 10px;
   width: 2px;
-  height: 0%;
   background: var(--primary);
-  transition: height 0.15s ease-out;
   z-index: 2;
   box-shadow: 0 0 8px var(--primary);
+  will-change: transform;
 }
 
 html.light .timeline-progress-line {
@@ -2123,7 +2125,8 @@ html.light .timeline-progress-line {
 @media (max-width: 768px) {
   .timeline-progress-line {
     left: 15px;
-    transform: none;
+    transform: scaleY(0);
+    transform-origin: top;
   }
 }
 
@@ -4053,4 +4056,57 @@ html.light .contact-submit-btn {
 html.light .contact-submit-btn:hover:not(:disabled) {
   background: transparent;
   color: var(--text-main);
+}
+
+/* ==========================================
+   MOBILE ACCELERATION & BACKDROP-FILTER RELIEF
+   ========================================== */
+@media (pointer: coarse) {
+  .header,
+  .hero-carousel-container,
+  .hero-nav-btn,
+  .drawer-container,
+  .drawer-backdrop,
+  .project-filters,
+  .carousel-nav-btn,
+  .project-card,
+  .cert-filters,
+  .cert-card,
+  .nav-links,
+  .experience-modal-overlay,
+  .lang-switcher,
+  .project-modal-overlay,
+  .contact-modal-overlay,
+  .contact-modal-content {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  .header {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+  }
+  .drawer-container {
+    background: rgba(10, 10, 12, 0.99) !important;
+  }
+  html.light .drawer-container {
+    background: rgba(255, 255, 255, 0.99) !important;
+  }
+  .project-filters,
+  .cert-filters {
+    background: rgba(15, 15, 18, 0.95) !important;
+  }
+  .project-card,
+  .cert-card {
+    background: rgba(15, 15, 18, 0.9) !important;
+  }
+  .experience-modal-overlay,
+  .project-modal-overlay {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+  .contact-modal-overlay {
+    background: rgba(0, 0, 0, 0.85) !important;
+  }
+  .contact-modal-content {
+    background: rgba(15, 15, 20, 0.98) !important;
+  }
 }

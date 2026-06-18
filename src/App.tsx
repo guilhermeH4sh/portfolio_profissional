@@ -37,7 +37,7 @@ function AppContent() {
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
-  // Mouse Position Tracker (Updates CSS variables on the root document element with requestAnimationFrame for performance)
+  // Mouse Position Tracker (Updates CSS variables directly on the grid-glow element to limit style recalculations)
   // Skipped on touch devices to improve mobile performance
   useEffect(() => {
     const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
@@ -47,11 +47,14 @@ function AppContent() {
     const handleMouseMove = (e: MouseEvent) => {
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(() => {
-        document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
-        document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+        const glowEl = document.getElementById('grid-glow');
+        if (glowEl) {
+          glowEl.style.setProperty('--mouse-x', `${e.clientX}px`);
+          glowEl.style.setProperty('--mouse-y', `${e.clientY}px`);
+        }
       });
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       cancelAnimationFrame(frameId);
@@ -67,7 +70,7 @@ function AppContent() {
         setScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
