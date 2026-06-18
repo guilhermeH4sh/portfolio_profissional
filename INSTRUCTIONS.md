@@ -137,3 +137,8 @@ No ecossistema **Shadcn UI**, a pasta `/components/ui` é reservada exclusivamen
 3. **Legibilidade das Importações:** Torna óbvia a origem do componente nas páginas:
    - `import { Button } from '@/components/ui/button'` (Elemento básico de UI)
    - `import { ProjectCard } from '@/components/ProjectCard'` (Componente de Negócio/Customizado)
+
+---
+
+## 🤖 Regras para a IA (Agent Rules)
+- **NÃO utilize ferramentas de navegador automatizadas (como `browser_subagent` ou `open_browser_url`) para abrir páginas no Chrome.** O usuário utiliza o navegador **Opera GX** como padrão. Se necessário, peça para o usuário realizar a verificação visual ou fazer o deploy local e validar.
