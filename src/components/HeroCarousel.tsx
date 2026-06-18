@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -9,10 +9,58 @@ import 'swiper/css';
 
 const HeroCarousel: React.FC = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const { language } = useLanguage();
 
+  useEffect(() => {
+    const container = containerRef.current;
+    let isPageVisible = true;
+    let isCarouselIntersecting = true;
+
+    const updateAutoplay = () => {
+      const swiper = swiperRef.current;
+      if (!swiper) return;
+      if (isPageVisible && isCarouselIntersecting) {
+        if (swiper.autoplay && !swiper.autoplay.running) {
+          swiper.autoplay.start();
+        }
+      } else {
+        if (swiper.autoplay && swiper.autoplay.running) {
+          swiper.autoplay.stop();
+        }
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      isPageVisible = document.visibilityState === 'visible';
+      updateAutoplay();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange, { passive: true });
+
+    let observer: IntersectionObserver | null = null;
+    if (container) {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          isCarouselIntersecting = entry.isIntersecting;
+          updateAutoplay();
+        },
+        { threshold: 0 }
+      );
+      observer.observe(container);
+    }
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (observer && container) {
+        observer.unobserve(container);
+        observer.disconnect();
+      }
+    };
+  }, []);
+
   return (
-    <div className="hero-carousel-container">
+    <div ref={containerRef} className="hero-carousel-container">
       <Swiper
         modules={[Navigation, Autoplay]}
         onSwiper={(swiper) => { swiperRef.current = swiper; }}
