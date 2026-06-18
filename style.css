@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap');
+/* Google Fonts loaded asynchronously in index.html for LCP optimization */
 
 /* ==========================================
    DESIGN SYSTEM & VARIABLES (PREMIUM MONOCHROME)
@@ -3423,6 +3423,14 @@ html.light .menu-btn span {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .drawer-container {
@@ -3440,6 +3448,17 @@ html.light .menu-btn span {
   display: flex;
   flex-direction: column;
   z-index: 9999;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.drawer-container.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 html.light .drawer-container {

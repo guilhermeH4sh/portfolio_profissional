@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import HeroPage from './components/HeroPage';
-import AboutPage from './components/AboutPage';
-import ProjectsPage from './components/ProjectsPage';
-import ContactPage from './components/ContactPage';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+
+const AboutPage = lazy(() => import('./components/AboutPage'));
+const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
+const ContactPage = lazy(() => import('./components/ContactPage'));
 
 function AppContent() {
   const [currentView, setCurrentView] = useState<'inicio' | 'trajetoria' | 'projetos' | 'contato'>('inicio');
@@ -38,7 +38,11 @@ function AppContent() {
   }, [theme]);
 
   // Mouse Position Tracker (Updates CSS variables on the root document element with requestAnimationFrame for performance)
+  // Skipped on touch devices to improve mobile performance
   useEffect(() => {
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) return;
+
     let frameId: number;
     const handleMouseMove = (e: MouseEvent) => {
       cancelAnimationFrame(frameId);
@@ -157,74 +161,60 @@ function AppContent() {
       {/* ==========================================
            SIDE MENU DRAWER (RESPONSIVE)
            ========================================== */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <>
-            {/* Backdrop Overlay */}
-            <motion.div 
-              className="drawer-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              onClick={() => setIsMenuOpen(false)}
-            />
-            {/* Slide-out Drawer */}
-            <motion.div 
-              className="drawer-container"
-              initial={{ x: '100%', opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: '100%', opacity: 0 }}
-              transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-            >
-              <nav className="drawer-nav">
-                <ul className="drawer-links">
-                  <li>
-                    <button
-                      className={`drawer-link ${currentView === 'inicio' ? 'active' : ''}`}
-                      onClick={() => { setCurrentView('inicio'); setIsMenuOpen(false); }}
-                    >
-                      {t('nav.inicio')}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={`drawer-link ${currentView === 'trajetoria' ? 'active' : ''}`}
-                      onClick={() => { setCurrentView('trajetoria'); setIsMenuOpen(false); }}
-                    >
-                      {t('nav.trajetoria')}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={`drawer-link ${currentView === 'projetos' ? 'active' : ''}`}
-                      onClick={() => { setCurrentView('projetos'); setIsMenuOpen(false); }}
-                    >
-                      {t('nav.projetos')}
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      className={`drawer-link drawer-link-highlight ${currentView === 'contato' ? 'active' : ''}`}
-                      onClick={() => { setCurrentView('contato'); setIsMenuOpen(false); }}
-                    >
-                      {t('nav.contato')}
-                    </button>
-                  </li>
-                </ul>
-              </nav>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      {/* Backdrop Overlay */}
+      <div 
+        className={`drawer-backdrop ${isMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
+      {/* Slide-out Drawer */}
+      <div className={`drawer-container ${isMenuOpen ? 'open' : ''}`}>
+        <nav className="drawer-nav">
+          <ul className="drawer-links">
+            <li>
+              <button
+                className={`drawer-link ${currentView === 'inicio' ? 'active' : ''}`}
+                onClick={() => { setCurrentView('inicio'); setIsMenuOpen(false); }}
+              >
+                {t('nav.inicio')}
+              </button>
+            </li>
+            <li>
+              <button
+                className={`drawer-link ${currentView === 'trajetoria' ? 'active' : ''}`}
+                onClick={() => { setCurrentView('trajetoria'); setIsMenuOpen(false); }}
+              >
+                {t('nav.trajetoria')}
+              </button>
+            </li>
+            <li>
+              <button
+                className={`drawer-link ${currentView === 'projetos' ? 'active' : ''}`}
+                onClick={() => { setCurrentView('projetos'); setIsMenuOpen(false); }}
+              >
+                {t('nav.projetos')}
+              </button>
+            </li>
+            <li>
+              <button
+                className={`drawer-link drawer-link-highlight ${currentView === 'contato' ? 'active' : ''}`}
+                onClick={() => { setCurrentView('contato'); setIsMenuOpen(false); }}
+              >
+                {t('nav.contato')}
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       {/* ==========================================
            PÁGINA ATIVA (RENDER VIEW)
            ========================================== */}
       {currentView === 'inicio' && <HeroPage onNavigate={setCurrentView} />}
-      {currentView === 'trajetoria' && <AboutPage />}
-      {currentView === 'projetos' && <ProjectsPage />}
-      {currentView === 'contato' && <ContactPage />}
+      <Suspense fallback={null}>
+        {currentView === 'trajetoria' && <AboutPage />}
+        {currentView === 'projetos' && <ProjectsPage />}
+        {currentView === 'contato' && <ContactPage />}
+      </Suspense>
     </>
   );
 }
