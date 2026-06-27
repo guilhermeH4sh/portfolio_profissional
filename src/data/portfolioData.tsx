@@ -56,7 +56,13 @@ export const projects: Project[] = [
     icon: <Briefcase className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #1e1b4b, #09090b)",
     image: "/project-worky-cover.png",
-    images: ["/project-worky-cover.png", "/project-worky-presentation.jpg", "/project-worky-ui.png"]
+    images: [
+      "/project-worky-cover.png",
+      "/project-worky-diagrams.png",
+      "/project-worky-personas.png",
+      "/project-worky-ods.png",
+      "/project-worky-links.png"
+    ]
   },
   {
     title: {
@@ -358,6 +364,28 @@ export const certificates: Certificate[] = [
       es: "Inmersión práctica enfocada en el desarrollo y aplicación de agentes de inteligencia artificial en escenarios reales, en alianza con Alura y Oracle Next Education."
     },
     fileUrl: "/certificados/234843_imersao_oracle.pdf"
+  },
+  {
+    title: {
+      pt: "Linguagens de Programação Orientadas a Objetos",
+      en: "Object-Oriented Programming Languages",
+      es: "Lenguajes de Programación Orientados a Objetos"
+    },
+    institution: {
+      pt: "IFSUL",
+      en: "IFSUL",
+      es: "IFSUL"
+    },
+    category: "cursos",
+    status: "finalizado",
+    year: "2026",
+    logo: "/logo-ifsul.png",
+    desc: {
+      pt: "Curso de Linguagens de Programação Orientadas a Objetos pelo Instituto Federal Sul-rio-grandense, com carga horária de 40 horas.",
+      en: "Object-Oriented Programming Languages course by the Federal Institute Sul-rio-grandense, with a workload of 40 hours.",
+      es: "Curso de Lenguajes de Programación Orientados a Objetos por el Instituto Federal Sul-rio-grandense, con una carga horaria de 40 horas."
+    },
+    fileUrl: "/certificados/234843_POO_IFSUL.png"
   },
   {
     title: {
