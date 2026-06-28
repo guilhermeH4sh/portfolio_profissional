@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Database, Briefcase, Bot } from 'lucide-react';
+import { GraduationCap, Database, Briefcase, Bot, Building } from 'lucide-react';
 
 export interface Project {
   title: { pt: string; en: string; es: string; };
@@ -13,6 +13,7 @@ export interface Project {
   image?: string;
   images?: string[];
   detailedDesc?: { pt: string; en: string; es: string; };
+  objectFit?: 'cover' | 'contain';
 }
 
 export interface Experience {
@@ -135,6 +136,38 @@ export const projects: Project[] = [
       pt: "Website temático do universo Batman Beyond com interface interativa e chatbot integrado.\n\nPrincipais funcionalidades técnicas:\n- **Chatbot com IA (Batcomputador)**: Terminal de comando integrado à API do Groq (modelo llama-3.1-8b-instant). Configurado com system prompt para simular o Batcomputador de Neo-Gotham em 2039 e restrição de escopo temática.\n- **Design Imersivo e Efeitos 3D**: Experiência visual cyberpunk com renderização WebGL e Three.js, incluindo um pilar de luz interativo (LightPillar) controlado por shaders customizados que reagem ao movimento do cursor.\n- **Galeria em Marquee Infinito**: Componente de apresentação de personagens com rolagem contínua acelerada por hardware (CSS keyframes) e interrupção ao passar o mouse (pause-on-hover).\n- **Arquitetura Front-end**: Desenvolvido em React e Vite, consumindo chaves de API de forma segura através de variáveis de ambiente.",
       en: "Thematic website for the Batman Beyond universe featuring an interactive interface and integrated chatbot.\n\nKey technical features:\n- **AI Chatbot (Batcomputer)**: Command terminal integrated with the Groq API (llama-3.1-8b-instant model). Configured via system prompt to emulate the 2039 Neo-Gotham Batcomputer with strict scope constraints.\n- **Immersive Design & 3D Effects**: Cyberpunk visual experience powered by WebGL and Three.js, featuring an interactive light pillar component (LightPillar) driven by custom shaders that react dynamically to the cursor.\n- **Infinite Marquee Gallery**: Infinite horizontal scrolling showcase for characters using hardware-accelerated CSS keyframe animations with pause-on-hover functionality.\n- **Front-end Architecture**: Built with React and Vite, using secure environment variables to handle API authentication.",
       es: "Sitio web temático del universo Batman Beyond con interfaz interactiva y chatbot integrado.\n\nPrincipales características técnicas:\n- **Chatbot con IA (Batcomputador)**: Terminal de comando integrado a la API de Groq (modelo llama-3.1-8b-instant). Configurado mediante system prompt para simular el Batcomputador de Neo-Gotham de 2039 con restricción temática estricta.\n- **Diseño Inmersivo y Efectos 3D**: Experiencia visual cyberpunk con WebGL y Three.js, que incluye un pilar de luz interactivo (LightPillar) controlado por shaders personalizados que reaccionan al movimiento del cursor.\n- **Galería en Marquee Infinito**: Exhibidor de personajes con desplazamiento horizontal continuo acelerado por hardware (CSS keyframes) y pausa al pasar el cursor (pause-on-hover).\n- **Arquitetura Front-end**: Desarrollado con React y Vite, gestionando claves de API de manera segura mediante variables de entorno."
+    }
+  },
+  {
+    title: {
+      pt: "Genebra Arquitetura",
+      en: "Genebra Architecture",
+      es: "Genebra Arquitectura"
+    },
+    category: "frontend",
+    tech: ["React", "TypeScript", "Tailwind", "Vite", "CSS3"],
+    desc: {
+      pt: "Landing page institucional premium para um escritório de arquitetura e urbanismo de alto padrão, com design minimalista, animações fluidas e seções interativas.",
+      en: "Premium institutional landing page for a high-end architecture and urban planning firm, featuring minimalist design, fluid animations, and interactive sections.",
+      es: "Landing page institucional premium para un estudio de arquitectura y urbanismo de alta gama, con diseño minimalista, animaciones fluidas y secciones interactivas."
+    },
+    demoUrl: "https://genebra-arquitetura.vercel.app",
+    icon: <Building className="w-12 h-12 text-white" />,
+    gradient: "linear-gradient(135deg, #1c1917, #0c0a09)",
+    image: "/project-genebra-cover.png",
+    objectFit: "contain",
+    images: [
+      "/project-genebra-cover.png",
+      "/project-genebra-layout.png",
+      "/project-genebra-recognition.png",
+      "/project-genebra-methodology.png",
+      "/project-genebra-contact.png",
+      "/project-genebra-footer.png"
+    ],
+    detailedDesc: {
+      pt: "Landing page institucional de alto padrão para o escritório fictício Genebra Arquitetura & Urbanismo, focada em transmitir sofisticação, minimalismo e atenção aos detalhes.\n\nPrincipais características do projeto:\n- **Estética Ultra-Premium**: Interface escura com paleta de cores refinada (preto profundo e detalhes em bronze/cobre), tipografia elegante utilizando as fontes *Playfair Display* e *Montserrat*.\n- **Arquitetura Interativa**: Navegação fluida pelas seções de Projetos, Estúdio (reconhecimentos e prêmios), Processo (etapas da metodologia do vazio ao espaço habitado) e Contato.\n- **Seção de Metodologia Dinâmica**: Apresentação interativa passo a passo das fases de projeto (Diálogo, Conceito, Detalhamento, Gestão e Entrega).\n- **Desenvolvimento Moderno**: Desenvolvido com React, Vite e Tailwind CSS, aplicando práticas avançadas de responsividade (mobile-first), acessibilidade e performance de carregamento rápido.",
+      en: "High-end institutional landing page for the fictional architecture & urban planning studio Genebra Arquitetura, designed to convey sophistication, minimalism, and attention to detail.\n\nKey project features:\n- **Ultra-Premium Aesthetics**: Dark theme interface with a refined color palette (deep blacks and bronze/copper accents), elegant typography utilizing *Playfair Display* and *Montserrat* fonts.\n- **Interactive Architecture**: Smooth navigation through Projects, Studio (recognition and awards), Process (methodology phases from vacancy to lived space), and Contact sections.\n- **Dynamic Methodology Section**: A step-by-step interactive presentation of the project phases (Dialogue, Concept, Detailing, Management, and Delivery).\n- **Modern Development**: Built with React, Vite, and Tailwind CSS, implementing advanced practices for responsiveness (mobile-first), accessibility, and fast load times.",
+      es: "Landing page institucional de alta gama para el estudio de arquitectura y urbanismo Genebra Arquitectura, diseñada para transmitir sofisticación, minimalismo y atención al detalle.\n\nCaracterísticas principales del proyecto:\n- **Estética Ultra-Premium**: Interfaz oscura con una paleta de colores refinada (negros profundos y acentos en bronce/cobre), tipografía elegante que utiliza las fuentes *Playfair Display* y *Montserrat*.\n- **Arquitectura Interactiva**: Navegación fluida por las secciones de Proyectos, Estudio (reconocimientos y premios), Proceso (fases de la metodología desde el vacío hasta el espacio habitado) y Contacto.\n- **Seção de Metodologia Dinâmica**: Presentación interactiva paso a paso de las fases del proyecto (Diálogo, Concepto, Detallado, Gestión y Entrega).\n- **Desarrollo Moderno**: Desarrollado con React, Vite y Tailwind CSS, aplicando prácticas avanzadas de diseño responsivo (mobile-first), accesibilidad y tiempos de carga rápidos."
     }
   }
 ];
