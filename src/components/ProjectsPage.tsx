@@ -132,6 +132,7 @@ const ProjectsPage: React.FC = () => {
                               src={project.image}
                               alt={project.title[language]}
                               className="project-card-image"
+                              style={{ objectFit: project.objectFit || 'cover' }}
                             />
                           ) : (
                             <div style={{ width: '100%', height: '100%', background: project.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
