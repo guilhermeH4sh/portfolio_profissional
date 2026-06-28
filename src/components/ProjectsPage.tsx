@@ -25,7 +25,8 @@ const getTechLogo = (tech: string): string | null => {
 
 const ProjectsPage: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'frontend' | 'backend' | 'fullstack'>('all');
-  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const { language, t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -49,20 +50,49 @@ const ProjectsPage: React.FC = () => {
 
   // Reset active slide when filter changes
   useEffect(() => {
-    setActiveProjectIndex(0);
+    setCurrentIndex(1);
+    setIsTransitioning(false);
   }, [filter]);
 
+  // Handle temporary transition disable toggle
+  useEffect(() => {
+    if (!isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(true);
+      }, 30);
+      return () => clearTimeout(timer);
+    }
+  }, [isTransitioning]);
+
   const handlePrev = () => {
-    setActiveProjectIndex((prev) =>
-      prev === 0 ? filteredProjects.length - 1 : prev - 1
-    );
+    if (filteredProjects.length <= 1) return;
+    setCurrentIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    setActiveProjectIndex((prev) =>
-      prev === filteredProjects.length - 1 ? 0 : prev + 1
-    );
+    if (filteredProjects.length <= 1) return;
+    setCurrentIndex((prev) => prev + 1);
   };
+
+  const handleTransitionEnd = () => {
+    if (filteredProjects.length <= 1) return;
+
+    if (currentIndex === 0) {
+      setIsTransitioning(false);
+      setCurrentIndex(filteredProjects.length);
+    } else if (currentIndex === filteredProjects.length + 1) {
+      setIsTransitioning(false);
+      setCurrentIndex(1);
+    }
+  };
+
+  const displayProjects = filteredProjects.length > 1
+    ? [
+        filteredProjects[filteredProjects.length - 1],
+        ...filteredProjects,
+        filteredProjects[0]
+      ]
+    : filteredProjects;
 
   return (
     <div className="page-view projects-page-view">
@@ -112,17 +142,34 @@ const ProjectsPage: React.FC = () => {
             <div className="projects-carousel-viewport">
               <div
                 className="projects-carousel-track"
+                onTransitionEnd={handleTransitionEnd}
                 style={{
-                  transform: `translateX(calc(50% - (var(--slide-width) / 2) - ${activeProjectIndex} * (var(--slide-width) + var(--slide-gap))))`
+                  transform: filteredProjects.length > 1
+                    ? `translateX(calc(50% - (var(--slide-width) / 2) - ${currentIndex} * (var(--slide-width) + var(--slide-gap))))`
+                    : `translateX(calc(50% - (var(--slide-width) / 2)))`,
+                  transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'none'
                 }}
               >
-                {filteredProjects.map((project, idx) => {
-                  const isActive = idx === activeProjectIndex;
+                {displayProjects.map((project, idx) => {
+                  const N = filteredProjects.length;
+                  let isActive = false;
+                  if (N > 1) {
+                    if (idx === currentIndex) {
+                      isActive = true;
+                    } else if (currentIndex === 0 && idx === N) {
+                      isActive = true;
+                    } else if (currentIndex === N + 1 && idx === 1) {
+                      isActive = true;
+                    }
+                  } else {
+                    isActive = true;
+                  }
+
                   return (
                     <div
                       key={idx}
                       className={`projects-carousel-slide ${isActive ? 'active' : ''}`}
-                      onClick={() => setActiveProjectIndex(idx)}
+                      onClick={() => N > 1 && setCurrentIndex(idx)}
                     >
                       <div className="project-card" data-category={project.category}>
                         <div className="project-image-wrapper">
@@ -237,7 +284,7 @@ const ProjectsPage: React.FC = () => {
             <button
               className="carousel-nav-btn next-btn"
               onClick={handleNext}
-              aria-label={language === 'en' ? 'Next project' : language === 'es' ? 'Siguiente proyecto' : 'Próximo projeto'}
+              aria-label={language === 'en' ? 'Next project' : language === 'es' ? 'Siguiente projeto' : 'Próximo projeto'}
             >
               <ChevronRight size={20} />
             </button>
@@ -245,20 +292,23 @@ const ProjectsPage: React.FC = () => {
 
           {filteredProjects.length > 1 && (
             <div className="carousel-dots">
-              {filteredProjects.map((_, idx) => (
-                <button
-                  key={idx}
-                  className={`carousel-dot ${idx === activeProjectIndex ? 'active' : ''}`}
-                  onClick={() => setActiveProjectIndex(idx)}
-                  aria-label={
-                    language === 'en' 
-                      ? `Go to project ${idx + 1}` 
-                      : language === 'es' 
-                        ? `Ir al proyecto ${idx + 1}` 
-                        : `Ir para o projeto ${idx + 1}`
-                  }
-                />
-              ))}
+              {filteredProjects.map((_, idx) => {
+                const isDotActive = (currentIndex - 1 + filteredProjects.length) % filteredProjects.length === idx;
+                return (
+                  <button
+                    key={idx}
+                    className={`carousel-dot ${isDotActive ? 'active' : ''}`}
+                    onClick={() => setCurrentIndex(idx + 1)}
+                    aria-label={
+                      language === 'en' 
+                        ? `Go to project ${idx + 1}` 
+                        : language === 'es' 
+                          ? `Ir al proyecto ${idx + 1}` 
+                          : `Ir para o projeto ${idx + 1}`
+                    }
+                  />
+                );
+              })}
             </div>
           )}
         </div>

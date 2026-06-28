@@ -106,7 +106,11 @@ export const projects: Project[] = [
     icon: <Database className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #09090b, #1f1f23)",
     image: "/project-kdatabase-cover.png",
-    images: ["/project-kdatabase-cover.png"]
+    images: [
+      "/project-kdatabase-cover.png",
+      "/project-kdatabase-dark.png",
+      "/project-kdatabase-search.png"
+    ]
   },
   {
     title: {
