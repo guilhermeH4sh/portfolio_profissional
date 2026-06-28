@@ -152,6 +152,7 @@ export const projects: Project[] = [
       es: "Landing page institucional premium para un estudio de arquitectura y urbanismo de alta gama, con diseño minimalista, animaciones fluidas y secciones interactivas."
     },
     demoUrl: "https://genebra-arquitetura.vercel.app",
+    githubUrl: "https://github.com/guilhermeH4sh/genebra_A-U",
     icon: <Building className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #1c1917, #0c0a09)",
     image: "/project-genebra-cover.png",
