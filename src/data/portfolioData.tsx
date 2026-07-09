@@ -94,8 +94,8 @@ export const projects: Project[] = [
       en: "K Database",
       es: "K Database"
     },
-    category: "fullstack",
-    tech: ["React", "Node.js", "MongoDB", "REST API"],
+    category: "frontend",
+    tech: ["HTML5", "CSS3", "JavaScript", "GSAP"],
     desc: {
       pt: "Sistema de catálogo de softwares corporativos que centraliza informações sobre licenças, descrições e validades dos sistemas utilizados pela empresa.",
       en: "Enterprise software catalog system that centralizes information about licenses, descriptions and validity of systems used by the company.",
@@ -108,9 +108,14 @@ export const projects: Project[] = [
     image: "/project-kdatabase-cover.png",
     images: [
       "/project-kdatabase-cover.png",
-      "/project-kdatabase-dark.png",
-      "/project-kdatabase-search.png"
-    ]
+      "/project-kdatabase-light.png",
+      "/project-kdatabase-menu.png"
+    ],
+    detailedDesc: {
+      pt: "Sistema de catálogo de softwares corporativos centralizado, focado na gestão visual de licenças, validades e descrições dos sistemas corporativos.\n\nPrincipais características da stack utilizada:\n- **Tecnologias Core**: Construído com HTML5 estrutural, CSS3 modular (com variáveis personalizadas para gerenciamento de temas) e JavaScript puro (ES6+) para manipulação assíncrona de dados.\n- **Animações de Alta Performance (GSAP)**: Utilização do GSAP (GreenSock) com o plugin ScrollTrigger para criar animações de entrada escalonadas (stagger) dos cards à medida que surgem na tela, além de transições fluidas no menu lateral móvel.\n- **Mecanismo de Filtros e Busca**: Sistema de pesquisa integrado em tempo real e filtros dinâmicos por status de validade da licença (Ativa, Expirada, Vence em X dias) com ordenação dinâmica (A-Z/Z-A e por prazos).\n- **Gerenciamento de Preferências**: Alternância dinâmica entre Modo Claro e Modo Escuro, persistindo a escolha do usuário diretamente no navegador via LocalStorage.\n- **Responsividade Mobile-First**: Layout adaptável estruturado com CSS Grid e Flexbox, garantindo ótima visualização em dispositivos móveis, tablets e desktops.",
+      en: "Centralized corporate software catalog system focused on visual management of licenses, expiration dates, and descriptions of corporate systems.\n\nKey features of the technology stack:\n- **Core Technologies**: Built with structural HTML5, modular CSS3 (using custom variables for theme management), and vanilla JavaScript (ES6+) for asynchronous data manipulation.\n- **High-Performance Animations (GSAP)**: Leverages GSAP (GreenSock) and the ScrollTrigger plugin to create elegant staggered loading animations for the software cards as they scroll into view, alongside fluid sidebar transitions.\n- **Filters & Search Mechanism**: Real-time search engine and dynamic filters based on license status (Active, Expired, Expiring in X days) with flexible sorting options (A-Z/Z-A and dates).\n- **Preference Management**: Dynamic toggle between Light and Dark modes, persisting the user's preference directly in the browser via LocalStorage.\n- **Mobile-First Responsiveness**: Adaptable layout structured with CSS Grid and Flexbox, ensuring optimal viewing across mobile, tablet, and desktop screens.",
+      es: "Sistema centralizado de catálogo de software corporativo, enfocado en la gestión visual de licencias, fechas de vencimiento y descripciones de los sistemas de la empresa.\n\nCaracterísticas principales de la pila tecnológica:\n- **Tecnologías Core**: Construido con HTML5 estructural, CSS3 modular (con variables personalizadas para gestión de temas) y JavaScript puro (ES6+) para la manipulación asíncrona de datos.\n- **Animaciones de Alto Rendimiento (GSAP)**: Utilización de GSAP (GreenSock) con el plugin ScrollTrigger para crear animaciones de carga escalonada (stagger) en las tarjetas a medida que aparecen en pantalla, además de transiciones fluidas en el menú lateral.\n- **Filtros y Motor de Búsqueda**: Sistema de búsqueda integrado en tiempo real y filtros dinámicos por estado de validez de la licencia (Activo, Expirado, Vence en X días) con ordenamiento dinámico (A-Z/Z-A y plazos).\n- **Gestión de Preferencias**: Alternancia dinámica entre Modo Claro y Modo Oscuro, guardando la elección del usuario directamente en el navegador a través de LocalStorage.\n- **Responsividad Mobile-First**: Diseño adaptable estructurado con CSS Grid y Flexbox, lo que garantiza una visualización excelente en dispositivos móviles, tabletas y ordenadores."
+    }
   },
   {
     title: {

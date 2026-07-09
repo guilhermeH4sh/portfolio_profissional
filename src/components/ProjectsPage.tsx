@@ -20,6 +20,8 @@ const getTechLogo = (tech: string): string | null => {
   if (t === 'three.js' || t === 'threejs') return 'https://cdn.simpleicons.org/threedotjs/ffffff';
   if (t === 'vite') return 'https://cdn.simpleicons.org/vite/ffffff';
   if (t === 'css3' || t === 'css') return 'https://cdn.simpleicons.org/css/ffffff';
+  if (t === 'html5' || t === 'html') return 'https://cdn.simpleicons.org/html5/ffffff';
+  if (t === 'gsap' || t === 'greensock') return 'https://cdn.simpleicons.org/greensock/ffffff';
   return null;
 };
 
