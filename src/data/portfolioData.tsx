@@ -134,9 +134,9 @@ export const projects: Project[] = [
     demoUrl: "https://batman-beyond.vercel.app",
     icon: <Bot className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #e11d48, #000000)",
-    image: "/project-batmanbeyond-cover.jpg",
+    image: "/project-batmanbeyond-cover.png",
     images: [
-      "/project-batmanbeyond-cover.jpg",
+      "/project-batmanbeyond-cover.png",
       "/project-batmanbeyond-chatbot.png",
       "/project-batmanbeyond-characters.png"
     ],
