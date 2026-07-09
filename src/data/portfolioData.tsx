@@ -169,6 +169,7 @@ export const projects: Project[] = [
     images: [
       "/project-genebra-cover.png",
       "/project-genebra-layout.png",
+      "/project-genebra-services.png",
       "/project-genebra-recognition.png",
       "/project-genebra-methodology.png",
       "/project-genebra-contact.png",
