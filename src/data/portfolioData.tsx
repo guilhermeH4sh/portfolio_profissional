@@ -138,6 +138,7 @@ export const projects: Project[] = [
     images: [
       "/project-batmanbeyond-cover.png",
       "/project-batmanbeyond-chatbot.png",
+      "/project-batmanbeyond-legacy.png",
       "/project-batmanbeyond-characters.png"
     ],
     detailedDesc: {
