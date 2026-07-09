@@ -169,11 +169,7 @@ export const projects: Project[] = [
     images: [
       "/project-genebra-cover.png",
       "/project-genebra-layout.png",
-      "/project-genebra-services.png",
-      "/project-genebra-recognition.png",
-      "/project-genebra-methodology.png",
-      "/project-genebra-contact.png",
-      "/project-genebra-footer.png"
+      "/project-genebra-methodology.png"
     ],
     detailedDesc: {
       pt: "Landing page institucional premium desenvolvida para o escritório de arquitetura e urbanismo de alto padrão Genebra. O design foca no minimalismo e na sofisticação para traduzir a identidade visual do escritório.\n\nA interface utiliza um tema escuro com uma paleta de cores refinada combinando tons escuros profundos e detalhes em bronze e cobre, acompanhada de uma tipografia elegante com as fontes Playfair Display e Montserrat. A navegação pelas seções de projetos, reconhecimentos da marca, metodologia e contato ocorre de forma fluida.\n\nO projeto apresenta uma seção dinâmica explicativa da metodologia do escritório, mostrando passo a passo cada etapa do trabalho de forma interativa. O desenvolvimento foi feito com React, Vite e Tailwind CSS, aplicando práticas modernas de desenvolvimento responsivo e otimização de carregamento.",
