@@ -22,6 +22,9 @@ const getTechLogo = (tech: string): string | null => {
   if (t === 'css3' || t === 'css') return 'https://cdn.simpleicons.org/css/ffffff';
   if (t === 'html5' || t === 'html') return 'https://cdn.simpleicons.org/html5/ffffff';
   if (t === 'gsap' || t === 'greensock') return 'https://cdn.simpleicons.org/greensock/ffffff';
+  if (t === 'memória' || t === 'memoria' || t === 'memory') {
+    return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0iTTIgOGgyMHY4SDJ6Ii8+PHJlY3QgeD0iNSIgeT0iMTAiIHdpZHRoPSIzIiBoZWlnaHQ9IjQiIHJ4PSIwLjUiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMTAuNSIgeT0iMTAiIHdpZHRoPSIzIiBoZWlnaHQ9IjQiIHJ4PSIwLjUiIGZpbGw9IndoaXRlIi8+PHJlY3QgeD0iMTYiIHk9IjEwIiB3aWR0aD0iMyIgaGVpZ2h0PSI0IiByeD0iMC41IiBmaWxsPSJ3aGl0ZSIvPjxwYXRoIGQ9Ik02IDE2djJNMTAgMTZ2Mk0xNCAxNnYyTTE4IDE2djIiLz48L3N2Zz4=';
+  }
   return null;
 };
 

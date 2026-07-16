@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Database, Briefcase, Bot, Building } from 'lucide-react';
+import { GraduationCap, Database, Briefcase, Bot, Building, BookOpen } from 'lucide-react';
 
 export interface Project {
   title: { pt: string; en: string; es: string; };
@@ -175,6 +175,38 @@ export const projects: Project[] = [
       pt: "Landing page institucional premium desenvolvida para o escritório de arquitetura e urbanismo de alto padrão Genebra. O design foca no minimalismo e na sofisticação para traduzir a identidade visual do escritório.\n\nA interface utiliza um tema escuro com uma paleta de cores refinada combinando tons escuros profundos e detalhes em bronze e cobre, acompanhada de uma tipografia elegante com as fontes Playfair Display e Montserrat. A navegação pelas seções de projetos, reconhecimentos da marca, metodologia e contato ocorre de forma fluida.\n\nO projeto apresenta uma seção dinâmica explicativa da metodologia do escritório, mostrando passo a passo cada etapa do trabalho de forma interativa. O desenvolvimento foi feito com React, Vite e Tailwind CSS, aplicando práticas modernas de desenvolvimento responsivo e otimização de carregamento.",
       en: "A premium institutional landing page developed for the high-end architecture and urban planning office Genebra. The design focuses on minimalism and sophistication to convey the studio's visual identity.\n\nThe interface features a dark theme with a refined color palette of deep blacks and bronze or copper details, supported by elegant typography using Playfair Display and Montserrat fonts. Navigation through projects, recognition, methodology, and contact flows naturally.\n\nThe page includes a dynamic methodology section that interactively guides the user through each stage of the project step by step. It was built using React, Vite, and Tailwind CSS, implementing modern practices for responsive design and performance optimization.",
       es: "Una landing page institucional premium desarrollada para el estudio de arquitectura y urbanismo de alta gama Genebra. El diseño se centra en el minimalismo y la sofisticación para transmitir la identidad visual de la oficina.\n\nLa interfaz utiliza un tema oscuro con una paleta de colores refinada que combina negros profundos y acentos en bronce y cobre, junto con tipografías elegantes como Playfair Display y Montserrat. La navegación por las secciones de proyectos, premios, metodología y contacto fluye de forma natural.\n\nLa página incluye una sección interactiva para explicar la metodología de trabajo del estudio paso a paso. El desarrollo se realizó con React, Vite y Tailwind CSS, aplicando prácticas modernas de diseño responsivo y optimización de rendimiento."
+    }
+  },
+  {
+    title: {
+      pt: "Leia",
+      en: "Leia",
+      es: "Leia"
+    },
+    category: "frontend",
+    tech: ["React", "TypeScript", "Tailwind", "Vite", "Memória"],
+    desc: {
+      pt: "Leitor de livros digitais em formato PDF executado diretamente no navegador com suporte a temas e salvamento automático do progresso de leitura.",
+      en: "Digital book reader in PDF format running directly in the browser featuring theme support and automatic reading progress saving.",
+      es: "Lector de libros digitales en formato PDF que se ejecuta directamente en el navegador con soporte para temas y guardado automático del progreso."
+    },
+    githubUrl: "https://github.com/guilhermeH4sh/kindle",
+    demoUrl: "https://kindle-chi.vercel.app",
+    icon: <BookOpen className="w-12 h-12 text-white" />,
+    gradient: "linear-gradient(135deg, #1f2937, #111827)",
+    image: "/project-kindle-cover.png",
+    objectFit: "contain",
+    images: [
+      "/project-kindle-cover.png",
+      "/project-kindle-light.png",
+      "/project-kindle-dark.png",
+      "/project-kindle-reader-cover.png",
+      "/project-kindle-reader-text.png"
+    ],
+    detailedDesc: {
+      pt: "O Leia é um leitor de e-books em PDF executado diretamente no cliente, simulando a experiência de um leitor digital Kindle. Sem banco de dados externo, o web app utiliza o armazenamento local para persistir de forma automática as leituras recentes, a última página visualizada de cada documento e as preferências de modo claro e escuro. Apresenta suporte para modo tela cheia, importação simplificada por arrastar e soltar de arquivos e um histórico interativo.",
+      en: "Leia is a client-side PDF e-reader simulating the experience of a Kindle digital reader. Without an external database, the web app uses local storage to automatically persist recent readings, the last viewed page of each document, and light/dark mode preferences. It supports full-screen mode, simplified drag-and-drop file import, and an interactive history.",
+      es: "Leia es un lector de e-books en PDF que se ejecuta directamente en el cliente, simulando la experiencia de un lector digital Kindle. Sin base de datos externa, la aplicación utiliza el almacenamiento local para guardar automáticamente las lecturas recientes, la última página visualizada de cada documento y las preferencias de modo claro y oscuro. Ofrece visualización en pantalla completa, importación simplificada de archivos al arrastrarlos y un historial interactivo."
     }
   }
 ];
