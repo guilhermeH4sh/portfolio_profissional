@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Database, Briefcase, Bot, Building, BookOpen } from 'lucide-react';
+import { GraduationCap, Database, Briefcase, Building, BookOpen } from 'lucide-react';
 
 export interface Project {
   title: { pt: string; en: string; es: string; };
@@ -107,44 +107,12 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #09090b, #1f1f23)",
     image: "/project-kdatabase-cover.png",
     images: [
-      "/project-kdatabase-cover.png",
-      "/project-kdatabase-light.png",
-      "/project-kdatabase-menu.png"
+      "/project-kdatabase-cover.png"
     ],
     detailedDesc: {
       pt: "Sistema de catálogo de softwares corporativos centralizado, focado na gestão visual de licenças, validades e descrições dos sistemas corporativos.\n\nO projeto foi construído utilizando tecnologias web fundamentais como HTML5 semântico e CSS3 estruturado com variáveis customizadas para gerenciar os temas. Toda a lógica da interface, filtragem e manipulação de dados é controlada de forma assíncrona por meio de JavaScript moderno (ES6+).\n\nPara proporcionar uma experiência fluida ao usuário, o site conta com animações integradas ao scroll da página e transições de entrada por meio do GSAP (GreenSock) e seu plugin ScrollTrigger. O sistema também possui um motor de busca em tempo real que lê o nome, descrição e etiquetas de cada item, além de filtros dinâmicos que identificam o vencimento da licença e ordenam os resultados. A escolha de tema claro ou escuro é feita dinamicamente e persistida de forma simples através do LocalStorage do navegador, enquanto a responsividade do layout é garantida pelo uso combinado de Flexbox e CSS Grid.",
       en: "Centralized corporate software catalog system focused on visual management of licenses, expiration dates, and descriptions of corporate systems.\n\nThe application was built using fundamental web technologies, including semantic HTML5 and modular CSS3 with custom properties for theme management. All interface logic, asynchronous data operations, and interactive behaviors are written in modern JavaScript (ES6+).\n\nTo create a fluid user experience, the website features high-performance scroll-triggered animations and entry transitions powered by GSAP (GreenSock) and ScrollTrigger. It includes a real-time search engine that parses names, descriptions, and tags, alongside dynamic filters that calculate license status and sort the results. The light/dark theme preference is toggled dynamically and persisted using browser LocalStorage, while responsiveness across devices is handled natively through CSS Grid and Flexbox.",
       es: "Sistema centralizado de catálogo de software corporativo, enfocado en la gestión visual de licencias, fechas de vencimiento y descripciones de los sistemas de la empresa.\n\nLa aplicación fue desarrollada utilizando tecnologías web esenciales como HTML5 semántico y CSS3 estructurado con variables personalizadas para la gestión de temas. Toda la lógica de la interfaz, el filtrado y el manejo asíncrono de datos están controlados mediante JavaScript moderno (ES6+).\n\nPara ofrecer una experiencia de usuario fluida, el sitio cuenta con animaciones e interacciones de desplazamiento de alto rendimiento integradas con GSAP (GreenSock) y ScrollTrigger. Dispone de un buscador en tiempo real que analiza nombres, descripciones y etiquetas, junto con filtros dinámicos que calculan el estado de validez de cada licencia. La selección de tema claro u oscuro se gestiona de forma dinámica y se guarda directamente a través del LocalStorage del navegador, mientras que la adaptabilidad del diseño está garantizada mediante el uso combinado de Flexbox y CSS Grid."
-    }
-  },
-  {
-    title: {
-      pt: "Batman Beyond",
-      en: "Batman Beyond",
-      es: "Batman Beyond"
-    },
-    category: "frontend",
-    tech: ["React", "Three.js", "Vite", "Groq API", "CSS3"],
-    desc: {
-      pt: "Website imersivo sobre o universo de Batman Beyond, com galeria de personagens, linha do tempo interativa e um chatbot inteligente integrado ao Batcomputador de Neo-Gotham via API do Groq.",
-      en: "Immersive website about the Batman Beyond universe, featuring a character gallery, interactive timeline, and an intelligent chatbot integrated with Neo-Gotham's Batcomputer via the Groq API.",
-      es: "Sitio web inmersivo sobre el universo de Batman Beyond, con galería de personajes, línea de tiempo interactiva y un chatbot inteligente integrado al Batcomputador de Neo-Gotham a través de la API de Groq."
-    },
-    githubUrl: "https://github.com/guilhermeH4sh/batman-beyond",
-    demoUrl: "https://batman-beyond.vercel.app",
-    icon: <Bot className="w-12 h-12 text-white" />,
-    gradient: "linear-gradient(135deg, #e11d48, #000000)",
-    image: "/project-batmanbeyond-cover.png",
-    images: [
-      "/project-batmanbeyond-cover.png",
-      "/project-batmanbeyond-chatbot.png",
-      "/project-batmanbeyond-legacy.png",
-      "/project-batmanbeyond-characters.png"
-    ],
-    detailedDesc: {
-      pt: "Website interativo dedicado ao universo de Batman Beyond, contendo uma galeria de personagens, linha do tempo interativa e um chatbot integrado.\n\nNo terminal de comandos, o assistente virtual simula o Batcomputador de Neo-Gotham no ano de 2039. A integração utiliza a API do Groq rodando o modelo LLaMA 8B, configurado com instruções específicas para manter a imersão no tema de ficção científica da série.\n\nA interface possui efeitos visuais em 3D implementados com WebGL e Three.js, incluindo pilares de luz que reagem ao mouse por meio de shaders customizados. A exibição dos personagens é feita por um componente de rolagem contínua acelerada por hardware com comportamento inteligente de pausa ao passar o cursor, enquanto o front-end foi estruturado de forma moderna com React e Vite.",
-      en: "An interactive website dedicated to the Batman Beyond universe, featuring a character gallery, an interactive timeline, and an integrated chatbot.\n\nThe command-line terminal simulates Neo-Gotham's Batcomputer in the year 2039. The integration connects to the Groq API running the LLaMA 8B model, configured with strict system instructions to maintain full immersion within the show's sci-fi theme.\n\nThe interface includes WebGL and Three.js 3D visual effects, such as custom-shaded light pillars reacting dynamically to cursor movements. Characters are displayed through a hardware-accelerated infinite marquee that pauses on hover, and the front-end architecture is built using React and Vite.",
-      es: "Un sitio web interactivo dedicado al universo de Batman Beyond, que presenta una galería de personajes, una línea de tiempo interactiva y un chatbot integrado.\n\nLa terminal de comandos simula el Batcomputador de Neo-Gotham en el año de 2039. La integración conecta con la API de Groq ejecutando el modelo LLaMA 8B, configurado con instrucciones específicas del sistema para mantener la inmersión en la temática de ciencia ficción de la serie.\n\nLa interfaz incluye efectos visuales en 3D con WebGL y Tres.js, como columnas de luz controladas por shaders que reaccionan al cursor. La galería de personajes utiliza un carrusel continuo acelerado por hardware con pausa al pasar el mouse, y la arquitectura front-end está construida con React y Vite."
     }
   },
   {
@@ -195,13 +163,8 @@ export const projects: Project[] = [
     icon: <BookOpen className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #1f2937, #111827)",
     image: "/project-kindle-cover.png",
-    objectFit: "contain",
     images: [
-      "/project-kindle-cover.png",
-      "/project-kindle-light.png",
-      "/project-kindle-dark.png",
-      "/project-kindle-reader-cover.png",
-      "/project-kindle-reader-text.png"
+      "/project-kindle-cover.png"
     ],
     detailedDesc: {
       pt: "O Leia é um leitor de e-books em PDF executado diretamente no cliente, simulando a experiência de um leitor digital Kindle. Sem banco de dados externo, o web app utiliza o armazenamento local para persistir de forma automática as leituras recentes, a última página visualizada de cada documento e as preferências de modo claro e escuro. Apresenta suporte para modo tela cheia, importação simplificada por arrastar e soltar de arquivos e um histórico interativo.",

@@ -365,7 +365,7 @@ body.modal-open .header {
   letter-spacing: 0;
   position: relative;
   padding: 0.5rem 0.8rem;
-  border-radius: 6px;
+  border-radius: 2px;
   transition: var(--transition-smooth);
 }
 
@@ -378,7 +378,7 @@ body.modal-open .header {
   background: var(--primary);
   color: var(--bg-deep);
   padding: 0.72rem 1.6rem;
-  border-radius: 6px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.75rem;
   font-family: var(--font-mono);
@@ -395,14 +395,14 @@ body.modal-open .header {
 .btn-cta:hover {
   background: transparent;
   color: var(--primary);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .btn-secondary {
   border: 1px solid var(--border-glow);
   color: var(--primary-bright);
   padding: 0.72rem 1.6rem;
-  border-radius: 6px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.75rem;
   font-family: var(--font-mono);
@@ -489,13 +489,13 @@ body.modal-open .header {
   position: relative;
   height: 580px;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 4px;
   background: rgba(0, 0, 0, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 0;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
 }
 
 /* Swiper classes integration */
@@ -528,7 +528,7 @@ body.modal-open .header {
   z-index: 10;
   width: 42px;
   height: 42px;
-  border-radius: 12px;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -541,7 +541,7 @@ body.modal-open .header {
   opacity: 0;
   visibility: hidden;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
 .hero-carousel-container:hover .hero-nav-btn {
@@ -553,12 +553,12 @@ body.modal-open .header {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
-  transform: translateY(-50%) scale(1.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: translateY(-50%);
+  box-shadow: none;
 }
 
 .hero-nav-btn:active {
-  transform: translateY(-50%) scale(0.95);
+  transform: translateY(-50%);
 }
 
 .hero-nav-prev {
@@ -600,7 +600,7 @@ body.modal-open .header {
 }
 
 .hero-swiper .hero-carousel-card:hover .hero-carousel-card-image {
-  transform: scale(1.06);
+  transform: scale(1.01);
 }
 
 .hero-carousel-card-content {
@@ -774,7 +774,7 @@ body.modal-open .header {
   background: transparent;
   color: #ffffff;
   padding: 0.78rem 1.8rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.85rem;
   font-family: var(--font-body);
@@ -821,14 +821,14 @@ body.modal-open .header {
 .btn-cta:hover {
   background: #ffffff;
   color: #000000;
-  box-shadow: 0 4px 25px rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 .btn-secondary {
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text-muted);
   padding: 0.78rem 1.8rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.85rem;
   font-family: var(--font-body);
@@ -932,7 +932,7 @@ body.modal-open .header {
   border: 1px solid var(--border-light);
   color: var(--text-muted);
   padding: 0.3rem 0.75rem;
-  border-radius: 6px;
+  border-radius: 2px;
   transition: var(--transition-smooth);
 }
 
@@ -993,9 +993,9 @@ body.modal-open .header {
 
 /* Center dot */
 .timeline-center-dot-alt {
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 0;
   background: var(--bg-deep);
   border: 2px solid rgba(255, 255, 255, 0.6);
   position: absolute;
@@ -1004,30 +1004,30 @@ body.modal-open .header {
   transform: translate(-50%, -50%);
   z-index: 5;
   transition: var(--transition-smooth);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+  box-shadow: none;
 }
 
 .timeline-row-alt:hover .timeline-center-dot-alt {
   border-color: var(--primary);
   background: var(--primary);
-  box-shadow: 0 0 14px rgba(255, 255, 255, 0.35);
+  box-shadow: none;
 }
 
 /* Card Content styling */
 .timeline-content-alt {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-light);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 1.8rem 2rem;
   transition: var(--transition-smooth);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: none;
 }
 
 .timeline-row-alt:hover .timeline-content-alt {
   background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  transform: none;
 }
 
 .timeline-period-alt {
@@ -1149,13 +1149,13 @@ body.modal-open .header {
   background: rgba(15, 15, 18, 0.8);
   backdrop-filter: blur(10px);
   padding: 0.35rem;
-  border-radius: 8px;
+  border-radius: 2px;
   border: 1px solid var(--border-light);
 }
 
 .filter-btn {
   padding: 0.5rem 1.2rem;
-  border-radius: 6px;
+  border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
@@ -1240,7 +1240,7 @@ body.modal-open .header {
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(20, 20, 24, 0.75);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -1252,7 +1252,7 @@ body.modal-open .header {
   z-index: 10;
   opacity: 0.85;
   transition: var(--transition-smooth);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
 }
 
 .carousel-nav-btn:hover {
@@ -1260,11 +1260,11 @@ body.modal-open .header {
   color: var(--primary);
   border-color: rgba(255, 255, 255, 0.35);
   opacity: 1;
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%);
 }
 
 .carousel-nav-btn:active {
-  transform: translateY(-50%) scale(0.95);
+  transform: translateY(-50%);
 }
 
 .prev-btn {
@@ -1285,9 +1285,9 @@ body.modal-open .header {
 }
 
 .carousel-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 16px;
+  height: 2px;
+  border-radius: 0;
   background: var(--text-dark);
   cursor: pointer;
   transition: var(--transition-smooth);
@@ -1304,8 +1304,8 @@ body.modal-open .header {
 .carousel-dot.active {
   background: var(--primary);
   opacity: 1;
-  transform: scale(1.25);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  transform: none;
+  box-shadow: none;
 }
 
 /* Responsiveness for Carousel */
@@ -1380,7 +1380,7 @@ body.modal-open .header {
   background: rgba(15, 15, 18, 0.5);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-light);
-  border-radius: 18px;
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: row; /* Alterado para horizontal no desktop */
@@ -1389,8 +1389,8 @@ body.modal-open .header {
 }
 
 .project-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.95), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
 }
 
 .project-image-wrapper {
@@ -1410,14 +1410,14 @@ body.modal-open .header {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  border-radius: 8px;
+  border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
   transition: var(--transition-slow);
 }
 
 .project-card:hover .project-card-image {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 
 .project-overlay {
@@ -1450,7 +1450,7 @@ body.modal-open .header {
   height: 38px;
   background: var(--primary);
   color: var(--bg-deep);
-  border-radius: 6px;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1460,7 +1460,7 @@ body.modal-open .header {
 
 .project-link-btn:hover {
   background: var(--text-muted);
-  transform: scale(1.05);
+  transform: none;
 }
 
 .project-info {
@@ -1488,7 +1488,7 @@ body.modal-open .header {
   letter-spacing: 0.05em;
   background: rgba(255, 255, 255, 0.03);
   padding: 0.2rem 0.45rem;
-  border-radius: 4px;
+  border-radius: 2px;
   border: 1px solid var(--border-light);
 }
 
@@ -1538,7 +1538,7 @@ body.modal-open .header {
   height: 28px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-light);
-  border-radius: 6px;
+  border-radius: 2px;
   transition: var(--transition-smooth);
 }
 
@@ -1648,7 +1648,7 @@ body.modal-open .header {
   background: rgba(15, 15, 18, 0.8);
   backdrop-filter: blur(10px);
   padding: 0.35rem;
-  border-radius: 8px;
+  border-radius: 2px;
   border: 1px solid var(--border-light);
   flex-wrap: wrap;
 }
@@ -1672,12 +1672,12 @@ body.modal-open .header {
   background: rgba(15, 15, 18, 0.5);
   backdrop-filter: blur(8px);
   border: 1px solid var(--border-light);
-  border-radius: 18px;
+  border-radius: 4px;
   padding: 2rem 2.2rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  transition: var(--transition-bounce);
+  transition: var(--transition-smooth);
   position: relative;
   overflow: hidden;
 }
@@ -1695,9 +1695,9 @@ body.modal-open .header {
 }
 
 .cert-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.7), 0 0 1px rgba(255, 255, 255, 0.15) inset;
+  transform: none;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
 }
 
 .cert-card:hover::before {
@@ -1715,7 +1715,7 @@ body.modal-open .header {
 .cert-logo-slot {
   width: 52px;
   height: 52px;
-  border-radius: 12px;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-light);
   display: flex;
@@ -1724,7 +1724,7 @@ body.modal-open .header {
   flex-shrink: 0;
   overflow: hidden;
   padding: 8px;
-  transition: var(--transition-bounce);
+  transition: var(--transition-smooth);
 }
 
 .cert-card:hover .cert-logo-slot {
@@ -1736,7 +1736,7 @@ body.modal-open .header {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 /* Header Text */
@@ -1774,7 +1774,7 @@ body.modal-open .header {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.3rem 0.7rem;
-  border-radius: 99px;
+  border-radius: 2px;
   flex-shrink: 0;
   white-space: nowrap;
 }
@@ -1825,7 +1825,7 @@ body.modal-open .header {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-light);
   padding: 0.22rem 0.65rem;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 /* Responsive */
@@ -1872,7 +1872,7 @@ body.modal-open .header {
 .fale-comigo-card {
   background: rgba(255, 255, 255, 0.02);
   color: var(--text-main);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 4.5rem 3rem;
   text-align: center;
   display: flex;
@@ -1881,10 +1881,7 @@ body.modal-open .header {
   max-width: 680px;
   margin: 0 auto;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 30px 60px -15px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 0 30px rgba(255, 255, 255, 0.04);
+  box-shadow: none;
   position: relative;
   overflow: hidden;
   transition: var(--transition-slow);
@@ -1902,12 +1899,9 @@ body.modal-open .header {
 }
 
 .fale-comigo-card:hover {
-  transform: translateY(-4px);
+  transform: none;
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 35px 70px -15px rgba(0, 0, 0, 0.9),
-    0 0 0 1px rgba(255, 255, 255, 0.25) inset,
-    0 0 45px rgba(255, 255, 255, 0.08);
+  box-shadow: none;
 }
 
 /* Close Button */
@@ -1917,7 +1911,7 @@ body.modal-open .header {
   right: 1.2rem;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
@@ -1933,14 +1927,14 @@ body.modal-open .header {
   background: var(--primary);
   border-color: var(--primary);
   color: var(--bg-deep);
-  transform: scale(1.1);
+  transform: rotate(90deg);
 }
 
 /* Mail Icon Wrapper & Animations */
 .mail-icon-wrapper {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -1956,14 +1950,14 @@ body.modal-open .header {
 }
 
 .fale-comigo-card:hover .mail-icon-wrapper {
-  transform: scale(1.08);
+  transform: none;
   background: var(--primary);
   border-color: var(--primary);
 }
 
 .fale-comigo-card:hover .mail-icon {
   color: var(--bg-deep);
-  transform: scale(1.1);
+  transform: none;
 }
 
 .fale-comigo-title {
@@ -1993,7 +1987,7 @@ body.modal-open .header {
   background: var(--primary);
   color: var(--bg-deep);
   padding: 0.85rem 2.2rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.95rem;
   border: 1px solid var(--primary);
@@ -2004,7 +1998,7 @@ body.modal-open .header {
 .fale-comigo-btn:hover {
   background: transparent;
   color: var(--primary);
-  box-shadow: 0 4px 25px rgba(255, 255, 255, 0.1);
+  box-shadow: none;
 }
 
 /* ==========================================
@@ -2352,7 +2346,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
 .experience-logo-slot {
   width: 52px;
   height: 52px;
-  border-radius: 12px;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-light);
   display: flex;
@@ -2360,7 +2354,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
   justify-content: center;
   cursor: pointer;
   flex-shrink: 0;
-  transition: var(--transition-bounce);
+  transition: var(--transition-smooth);
   overflow: hidden;
   padding: 6px;
 }
@@ -2368,20 +2362,20 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
 .experience-logo-slot:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: none;
+  box-shadow: none;
 }
 
 .experience-logo-img-inside {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 6px;
-  transition: var(--transition-bounce);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
 }
 
 .experience-logo-slot:hover .experience-logo-img-inside {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .experience-header-text {
@@ -2406,12 +2400,12 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
 .experience-modal-content {
   background: #0d0d0f;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 4px;
   width: 100%;
   max-width: 480px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: none;
   animation: scaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   display: flex;
   flex-direction: column;
@@ -2423,7 +2417,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
   right: 1.25rem;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--text-muted);
@@ -2458,7 +2452,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
   max-width: 85%;
   max-height: 85%;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 2px;
   animation: logoZoomIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -2483,7 +2477,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-light);
   padding: 0.25rem 0.75rem;
-  border-radius: 99px;
+  border-radius: 2px;
   margin-bottom: 1.25rem;
 }
 
@@ -2980,7 +2974,7 @@ body {
   gap: 0.2rem;
   background: rgba(255, 255, 255, 0.03);
   padding: 0.2rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -2995,7 +2989,7 @@ body {
   font-weight: 700;
   color: var(--text-muted);
   padding: 0.25rem 0.6rem;
-  border-radius: 9999px;
+  border-radius: 2px;
   cursor: pointer;
   transition: var(--transition-smooth);
   text-transform: uppercase;
@@ -3060,13 +3054,14 @@ body {
 /* ==========================================
    THEME TOGGLE BUTTON
    ========================================== */
-.theme-toggle-btn {
+.theme-toggle-btn,
+.home-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
@@ -3074,15 +3069,17 @@ body {
   transition: var(--transition-smooth);
 }
 
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.home-btn:hover {
   color: var(--primary);
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.05);
+  transform: none;
 }
 
-.theme-toggle-btn:active {
-  transform: scale(0.95);
+.theme-toggle-btn:active,
+.home-btn:active {
+  transform: none;
 }
 
 /* ==========================================
@@ -3221,13 +3218,15 @@ html.light .header.scrolled {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-html.light .theme-toggle-btn {
+html.light .theme-toggle-btn,
+html.light .home-btn {
   background: rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(0, 0, 0, 0.06);
   color: var(--text-muted);
 }
 
-html.light .theme-toggle-btn:hover {
+html.light .theme-toggle-btn:hover,
+html.light .home-btn:hover {
   color: var(--primary);
   background: rgba(0, 0, 0, 0.05);
   border-color: rgba(0, 0, 0, 0.15);
@@ -3492,7 +3491,7 @@ html.light .drawer-container {
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  transition: var(--transition-bounce);
+  transition: var(--transition-smooth);
   text-align: left;
   background: none;
   border: none;
@@ -3504,7 +3503,7 @@ html.light .drawer-container {
 .drawer-link:hover,
 .drawer-link.active {
   color: var(--primary);
-  transform: translateX(8px);
+  transform: translateX(4px);
 }
 
 .drawer-link-highlight {
@@ -3531,13 +3530,13 @@ html.light .drawer-container {
 .project-modal-content {
   background: #0d0d0f;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
+  border-radius: 4px;
   width: 100%;
   max-width: 900px;
   max-height: 90vh;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: none;
   animation: scaleUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -3595,8 +3594,8 @@ html.light .drawer-container {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 2px;
+  box-shadow: none;
 }
 
 .project-modal-slider-btn {
@@ -3605,7 +3604,7 @@ html.light .drawer-container {
   transform: translateY(-50%);
   width: 38px;
   height: 38px;
-  border-radius: 50%;
+  border-radius: 2px;
   background: rgba(15, 15, 18, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
@@ -3642,9 +3641,9 @@ html.light .drawer-container {
 }
 
 .project-modal-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 16px;
+  height: 2px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
   border: none;
@@ -3654,7 +3653,7 @@ html.light .drawer-container {
 
 .project-modal-dot.active {
   background: var(--primary);
-  transform: scale(1.2);
+  transform: none;
 }
 
 .project-modal-right {
@@ -3719,7 +3718,7 @@ html.light .drawer-container {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.6rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 2px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -3810,10 +3809,8 @@ html.light .project-modal-close-btn:hover {
 .contact-modal-content {
   background: rgba(15, 15, 20, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 30px 60px -15px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-  border-radius: 16px;
+  box-shadow: none;
+  border-radius: 4px;
   width: 90%;
   max-width: 520px;
   padding: 3rem;
@@ -3880,7 +3877,7 @@ html.light .project-modal-close-btn:hover {
 .form-textarea {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
+  border-radius: 2px;
   padding: 0.8rem 1rem;
   color: var(--text-main);
   font-family: var(--font-body);
@@ -3915,7 +3912,7 @@ html.light .project-modal-close-btn:hover {
   background: var(--primary);
   color: var(--bg-deep);
   padding: 0.9rem 2rem;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 1rem;
   border: 1px solid var(--primary);
@@ -4011,7 +4008,7 @@ html.light .project-modal-close-btn:hover {
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: var(--text-main);
   padding: 0.75rem 2rem;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 600;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -4027,9 +4024,7 @@ html.light .project-modal-close-btn:hover {
 html.light .contact-modal-content {
   background: rgba(244, 244, 245, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 
-    0 30px 60px -15px rgba(0, 0, 0, 0.25),
-    0 0 0 1px rgba(0, 0, 0, 0.03) inset;
+  box-shadow: none;
 }
 
 html.light .contact-modal-title {

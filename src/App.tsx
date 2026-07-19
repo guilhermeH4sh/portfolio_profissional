@@ -1,7 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import HeroPage from './components/HeroPage';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Home } from 'lucide-react';
 
 const AboutPage = lazy(() => import('./components/AboutPage'));
 const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
@@ -89,13 +89,10 @@ function AppContent() {
         <div className="container nav-wrapper">
           <button 
             onClick={() => { setCurrentView('inicio'); setIsMenuOpen(false); }} 
-            className="avatar-link" 
-            aria-label="Perfil" 
-            style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
+            className="home-btn" 
+            aria-label="Home"
           >
-            <div className="avatar-slot">
-              <img src="/avatar.png" alt="Avatar Guilherme Ferreira" className="avatar-img" />
-            </div>
+            <Home size={14} />
           </button>
 
           <div className="nav-lang-group">
