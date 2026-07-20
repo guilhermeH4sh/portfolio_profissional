@@ -7,20 +7,6 @@ export interface HeroProject {
 
 export const heroProjects: HeroProject[] = [
   {
-    title: "Plataforma Worky",
-    subtitle: {
-      pt: "Interface Principal da Plataforma",
-      en: "Main Platform Interface",
-      es: "Interfaz Principal de la Plataforma"
-    },
-    image: "/project-worky-ui.png",
-    tag: {
-      pt: "Interface & Inteligência",
-      en: "UI & Intelligence",
-      es: "Interfaz e Inteligencia"
-    }
-  },
-  {
     title: "Bolsa PROUNI 100% Integral",
     subtitle: {
       pt: "Conquista acadêmica por desempenho",
