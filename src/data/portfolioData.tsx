@@ -117,36 +117,6 @@ export const projects: Project[] = [
   },
   {
     title: {
-      pt: "Genebra Arquitetura",
-      en: "Genebra Architecture",
-      es: "Genebra Arquitectura"
-    },
-    category: "frontend",
-    tech: ["React", "TypeScript", "Tailwind", "Vite", "CSS3"],
-    desc: {
-      pt: "Landing page institucional premium para um escritório de arquitetura e urbanismo de alto padrão, com design minimalista, animações fluidas e seções interativas.",
-      en: "Premium institutional landing page for a high-end architecture and urban planning firm, featuring minimalist design, fluid animations, and interactive sections.",
-      es: "Landing page institucional premium para un estudio de arquitectura y urbanismo de alta gama, con diseño minimalista, animaciones fluidas y secciones interactivas."
-    },
-    demoUrl: "https://genebra-arquitetura.vercel.app",
-    githubUrl: "https://github.com/guilhermeH4sh/genebra_A-U",
-    icon: <Building className="w-12 h-12 text-white" />,
-    gradient: "linear-gradient(135deg, #1c1917, #0c0a09)",
-    image: "/project-genebra-cover.png",
-    objectFit: "contain",
-    images: [
-      "/project-genebra-cover.png",
-      "/project-genebra-layout.png",
-      "/project-genebra-methodology.png"
-    ],
-    detailedDesc: {
-      pt: "Landing page institucional premium desenvolvida para o escritório de arquitetura e urbanismo de alto padrão Genebra. O design foca no minimalismo e na sofisticação para traduzir a identidade visual do escritório.\n\nA interface utiliza um tema escuro com uma paleta de cores refinada combinando tons escuros profundos e detalhes em bronze e cobre, acompanhada de uma tipografia elegante com as fontes Playfair Display e Montserrat. A navegação pelas seções de projetos, reconhecimentos da marca, metodologia e contato ocorre de forma fluida.\n\nO projeto apresenta uma seção dinâmica explicativa da metodologia do escritório, mostrando passo a passo cada etapa do trabalho de forma interativa. O desenvolvimento foi feito com React, Vite e Tailwind CSS, aplicando práticas modernas de desenvolvimento responsivo e otimização de carregamento.",
-      en: "A premium institutional landing page developed for the high-end architecture and urban planning office Genebra. The design focuses on minimalism and sophistication to convey the studio's visual identity.\n\nThe interface features a dark theme with a refined color palette of deep blacks and bronze or copper details, supported by elegant typography using Playfair Display and Montserrat fonts. Navigation through projects, recognition, methodology, and contact flows naturally.\n\nThe page includes a dynamic methodology section that interactively guides the user through each stage of the project step by step. It was built using React, Vite, and Tailwind CSS, implementing modern practices for responsive design and performance optimization.",
-      es: "Una landing page institucional premium desarrollada para el estudio de arquitectura y urbanismo de alta gama Genebra. El diseño se centra en el minimalismo y la sofisticación para transmitir la identidad visual de la oficina.\n\nLa interfaz utiliza un tema oscuro con una paleta de colores refinada que combina negros profundos y acentos en bronce y cobre, junto con tipografías elegantes como Playfair Display y Montserrat. La navegación por las secciones de proyectos, premios, metodología y contacto fluye de forma natural.\n\nLa página incluye una sección interactiva para explicar la metodología de trabajo del estudio paso a paso. El desarrollo se realizó con React, Vite y Tailwind CSS, aplicando prácticas modernas de diseño responsivo y optimización de rendimiento."
-    }
-  },
-  {
-    title: {
       pt: "Leia",
       en: "Leia",
       es: "Leia"

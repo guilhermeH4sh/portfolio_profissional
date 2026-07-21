@@ -528,20 +528,20 @@ body.modal-open .header {
   z-index: 10;
   width: 42px;
   height: 42px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  background: rgba(15, 15, 18, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: none;
+  opacity: 0.8;
+  visibility: visible;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
 }
 
 .hero-carousel-container:hover .hero-nav-btn {
@@ -550,15 +550,15 @@ body.modal-open .header {
 }
 
 .hero-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(10, 10, 12, 0.95);
+  border-color: rgba(255, 255, 255, 0.4);
   color: #ffffff;
-  transform: translateY(-50%);
-  box-shadow: none;
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
 }
 
 .hero-nav-btn:active {
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(0.95);
 }
 
 .hero-nav-prev {
@@ -3406,16 +3406,17 @@ html.light .hero-carousel-container {
 }
 
 html.light .hero-nav-btn {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
 html.light .hero-nav-btn:hover {
   background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.3);
   color: #000000;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 html.light .menu-btn span {
