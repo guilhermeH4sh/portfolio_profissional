@@ -47,5 +47,19 @@ export const heroProjects: HeroProject[] = [
       en: "Volunteering & Leadership",
       es: "Voluntariado y Liderazgo"
     }
+  },
+  {
+    title: "Cursor Meetup Sorocaba 2026",
+    subtitle: {
+      pt: "Presença no evento da comunidade de IA em Sorocaba",
+      en: "Attendance at the AI community event in Sorocaba",
+      es: "Presencia en el evento de la comunidad de IA en Sorocaba"
+    },
+    image: "/cursor-meetup-sp-2026.jpg",
+    tag: {
+      pt: "Comunidade & Tech",
+      en: "Community & Tech",
+      es: "Comunidad y Tech"
+    }
   }
 ];

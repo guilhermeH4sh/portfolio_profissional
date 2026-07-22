@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Database, Briefcase, Building, BookOpen } from 'lucide-react';
+import { GraduationCap, Database, Briefcase, BookOpen } from 'lucide-react';
 
 export interface Project {
   title: { pt: string; en: string; es: string; };
