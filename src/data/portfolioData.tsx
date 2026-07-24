@@ -147,6 +147,40 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     period: {
+      pt: "jul de 2026 — O momento",
+      en: "Jul 2026 — Present",
+      es: "jul de 2026 — Presente"
+    },
+    role: {
+      pt: "Analista de Crédito",
+      en: "Credit Analyst",
+      es: "Analista de Crédito"
+    },
+    company: "AGX Software",
+    desc: {
+      pt: "Atuação como Analista de Crédito com foco na identificação e prevenção de fraudes, análise de riscos e inconsistências, registro e documentação detalhada das análises em sistema, e apoio à tomada de decisão para concessão de crédito.",
+      en: "Working as a Credit Analyst focusing on fraud identification and prevention, risk and inconsistency analysis, detailed recording and documentation of analyses in system, and decision support for credit granting.",
+      es: "Desempeño como Analista de Crédito con enfoque en la identificación y prevención de fraudes, análisis de riesgos e inconsistencias, registro y documentación detallada de los análisis en sistema, y apoyo a la toma de decisiones para la concesión de crédito."
+    },
+    tags: {
+      pt: ["Análise de Crédito", "Antifraude", "Análise de Risco", "Concessão de Crédito"],
+      en: ["Credit Analysis", "Anti-fraud", "Risk Analysis", "Credit Granting"],
+      es: ["Análisis de Crédito", "Antifraude", "Análisis de Riesgo", "Concesión de Crédito"]
+    },
+    logo: "/logo-agx.png",
+    sector: {
+      pt: "Tecnologia & Serviços Financeiros",
+      en: "Technology & Financial Services",
+      es: "Tecnología y Servicios Financieros"
+    },
+    sectorDesc: {
+      pt: "A AGX Software desenvolve soluções tecnológicas e plataformas de software para o setor financeiro e de análise de crédito, priorizando a segurança, a inteligência de dados e a eficiência no apoio à tomada de decisões estratégicas e prevenção a riscos.",
+      en: "AGX Software develops technological solutions and software platforms for the financial and credit analysis sector, prioritizing security, data intelligence, and efficiency in supporting strategic decision-making and risk prevention.",
+      es: "AGX Software desarrolla soluciones tecnológicas y plataformas de software para el sector financiero y de análisis de crédito, priorizando la seguridad, la inteligencia de datos y la eficiencia en el apoyo a la toma de decisiones estratégicas y prevención de riesgos."
+    }
+  },
+  {
+    period: {
       pt: "abr de 2026 — O momento",
       en: "Apr 2026 — Present",
       es: "abr de 2026 — Presente"
@@ -158,14 +192,14 @@ export const experiences: Experience[] = [
     },
     company: "Centrus Inteligência Artificial",
     desc: {
-      pt: "Atuação focada em assegurar a máxima qualidade de software através do planejamento e execução de testes manuais e automatizados. Responsável por identificar falhas estruturais, criar cenários complexos de validação, documentar casos de teste (test cases) e colaborar ativamente com o time de desenvolvimento para garantir entregas eficientes, mitigar riscos e otimizar a experiência final do usuário.",
-      en: "Role focused on ensuring maximum software quality through the planning and execution of manual and automated tests. Responsible for identifying structural flaws, creating complex validation scenarios, documenting test cases, and actively collaborating with the development team to ensure efficient deliveries, mitigate risks, and optimize the final user experience.",
-      es: "Actuación enfocada en asegurar la máxima calidad del software mediante la planificación y ejecución de pruebas manuales y automatizadas. Responsable de identificar fallas estructurales, crear escenarios complejos de validación, documentar casos de prueba (test cases) y colaborar activamente con el equipo de desarrollo para garantizar entregas eficientes, mitigar riesgos y optimizar la experiencia final del usuario."
+      pt: "Atuação focada em assegurar a máxima qualidade de software através do planejamento e execução de testes manuais e automatizados. Responsável por identificar falhas estruturais, criar cenários complexos de validação, documentar casos de teste (test cases) e colaborar ativamente com o time de desenvolvimento para garantir entregas eficientes, mitigar riscos e otimizar a experiência final do usuário. Além disso, atuei em projetos de desenvolvimento front-end onde pude criar um novo website para a empresa, realizando também manutenções contínuas envolvendo UX/UI.",
+      en: "Role focused on ensuring maximum software quality through the planning and execution of manual and automated tests. Responsible for identifying structural flaws, creating complex validation scenarios, documenting test cases, and actively collaborating with the development team to ensure efficient deliveries, mitigate risks, and optimize the final user experience. Additionally, worked on front-end development projects creating a new website for the company, alongside ongoing UX/UI maintenance.",
+      es: "Actuación enfocada en asegurar la máxima calidad del software mediante la planificación y ejecución de pruebas manuales y automatizadas. Responsable de identificar fallas estructurales, crear escenarios complejos de validación, documentar casos de prueba (test cases) y colaborar activamente con el equipo de desarrollo para garantizar entregas eficientes, mitigar riesgos y optimizar la experiencia final del usuario. Además, participé en proyectos de desarrollo front-end donde creé un nuevo sitio web para la empresa, realizando también mantenimientos continuos de UX/UI."
     },
     tags: {
-      pt: ["QA Testing", "Automação", "Quality Assurance"],
-      en: ["QA Testing", "Automation", "Quality Assurance"],
-      es: ["QA Testing", "Automatización", "Quality Assurance"]
+      pt: ["QA Testing", "Automação", "Quality Assurance", "Front-end", "UX/UI"],
+      en: ["QA Testing", "Automation", "Quality Assurance", "Front-end", "UX/UI"],
+      es: ["QA Testing", "Automatización", "Quality Assurance", "Front-end", "UX/UI"]
     },
     logo: "/logo-centrus.png",
     sector: {
@@ -347,6 +381,72 @@ export const certificates: Certificate[] = [
       en: "Professional certification for complete banking correspondent in compliance with Central Bank resolutions. Credential code: 24.459.",
       es: "Certificación profesional de corresponsal bancario completo en conformidad con las resoluciones del Banco Central. Código de credencial: 24.459."
     }
+  },
+  {
+    title: {
+      pt: "Datadog Learning Center — Backend Engineer",
+      en: "Datadog Learning Center — Backend Engineer",
+      es: "Datadog Learning Center — Backend Engineer"
+    },
+    institution: {
+      pt: "Datadog",
+      en: "Datadog",
+      es: "Datadog"
+    },
+    category: "certificacoes",
+    status: "finalizado",
+    year: "2026",
+    logo: "/logo-datadog.png",
+    desc: {
+      pt: "Certificação/Badge emitida pelo Datadog Learning Center demonstrando proficiência técnica em observabilidade, monitoramento de métricas, APM e engenharia de backend.",
+      en: "Certification/Badge issued by Datadog Learning Center demonstrating technical proficiency in observability, metrics monitoring, APM, and backend engineering.",
+      es: "Certificación/Badge emitida por Datadog Learning Center que demuestra competencia técnica en observabilidad, monitoreo de métricas, APM e ingeniería backend."
+    },
+    fileUrl: "/logo-datadog.png"
+  },
+  {
+    title: {
+      pt: "CRUD Operations in MongoDB",
+      en: "CRUD Operations in MongoDB",
+      es: "CRUD Operations in MongoDB"
+    },
+    institution: {
+      pt: "MongoDB / Credly",
+      en: "MongoDB / Credly",
+      es: "MongoDB / Credly"
+    },
+    category: "certificacoes",
+    status: "finalizado",
+    year: "2026",
+    logo: "https://cdn.simpleicons.org/mongodb/47A248",
+    desc: {
+      pt: "Certificação de habilidade prática em operações de criação, leitura, atualização e exclusão (CRUD) no banco de dados NoSQL MongoDB. Credencial emitida via Credly.",
+      en: "Skill certification for practical create, read, update, and delete (CRUD) operations in the MongoDB NoSQL database. Credential issued via Credly.",
+      es: "Certificación de habilidad práctica en operaciones de creación, lectura, actualización y eliminación (CRUD) en la base de datos NoSQL MongoDB. Credencial emitida via Credly."
+    },
+    fileUrl: "/certificados/234843_mongodb_crud_operations.pdf"
+  },
+  {
+    title: {
+      pt: "MongoDB Overview: Core Concepts and Architecture",
+      en: "MongoDB Overview: Core Concepts and Architecture",
+      es: "MongoDB Overview: Core Concepts and Architecture"
+    },
+    institution: {
+      pt: "MongoDB / Credly",
+      en: "MongoDB / Credly",
+      es: "MongoDB / Credly"
+    },
+    category: "certificacoes",
+    status: "finalizado",
+    year: "2026",
+    logo: "https://cdn.simpleicons.org/mongodb/47A248",
+    desc: {
+      pt: "Certificação sobre conceitos fundamentais, arquitetura orientada a documentos, modelagem de dados e alta disponibilidade no MongoDB. Credencial emitida via Credly.",
+      en: "Certification covering core concepts, document-oriented architecture, data modeling, and high availability in MongoDB. Credential issued via Credly.",
+      es: "Certificación sobre conceptos fundamentales, arquitectura orientada a documentos, modelado de datos y alta disponibilidad en MongoDB. Credencial emitida via Credly."
+    },
+    fileUrl: "/certificados/234843_mongodb_overview.pdf"
   },
   {
     title: {
