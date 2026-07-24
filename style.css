@@ -265,16 +265,10 @@ body.modal-open .header {
   transition: var(--transition-smooth);
 }
 
-/* Move o logotipo circular com a letra 'G' para a esquerda no desktop para equilíbrio visual */
-@media (min-width: 1300px) {
-  .avatar-link {
-    transform: translateX(-50px);
-  }
-}
-
-@media (min-width: 1400px) {
-  .avatar-link {
-    transform: translateX(-100px);
+/* Alinha o botão Home para a esquerda no desktop para alinhar perfeitamente com o botão 'Ver Portfólio' */
+@media (min-width: 1025px) {
+  .home-btn {
+    margin-left: -60px;
   }
 }
 
