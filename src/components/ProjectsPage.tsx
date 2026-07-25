@@ -17,6 +17,7 @@ const getTechLogo = (tech: string): string | null => {
   if (t === 'streamlit') return 'https://cdn.simpleicons.org/streamlit/ffffff';
   if (t === 'langchain') return 'https://cdn.simpleicons.org/langchain/ffffff';
   if (t === 'mongodb' || t === 'mongo') return 'https://cdn.simpleicons.org/mongodb/ffffff';
+  if (t === 'express' || t === 'express.js') return 'https://cdn.simpleicons.org/express/ffffff';
   if (t === 'three.js' || t === 'threejs') return 'https://cdn.simpleicons.org/threedotjs/ffffff';
   if (t === 'vite') return 'https://cdn.simpleicons.org/vite/ffffff';
   if (t === 'css3' || t === 'css') return 'https://cdn.simpleicons.org/css/ffffff';
