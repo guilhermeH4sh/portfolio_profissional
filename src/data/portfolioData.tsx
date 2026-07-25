@@ -90,6 +90,35 @@ export const projects: Project[] = [
   },
   {
     title: {
+      pt: "CRUD Node.js & MongoDB",
+      en: "CRUD Node.js & MongoDB",
+      es: "CRUD Node.js & MongoDB"
+    },
+    category: "backend",
+    tech: ["Node.js", "MongoDB", "JavaScript", "Express"],
+    desc: {
+      pt: "Sistema de gerenciamento de dados com operações CRUD completas (Create, Read, Update, Delete) desenvolvido com Node.js e MongoDB.",
+      en: "Data management system with complete CRUD operations (Create, Read, Update, Delete) built with Node.js and MongoDB.",
+      es: "Sistema de gestión de datos con operaciones CRUD completas (Create, Read, Update, Delete) desarrollado con Node.js y MongoDB."
+    },
+    githubUrl: "https://github.com/guilhermeH4sh/crud_node.js-mongodb",
+    icon: <Database className="w-12 h-12 text-white" />,
+    gradient: "linear-gradient(135deg, #111827, #064e3b)",
+    image: "/project-crud-node-mongodb-cover.png",
+    images: [
+      "/project-crud-node-mongodb-cover.png",
+      "/project-crud-vscode.png",
+      "/project-crud-postman.png",
+      "/project-crud-mongodb-atlas.png"
+    ],
+    detailedDesc: {
+      pt: "Aplicação backend desenvolvida com Node.js e banco de dados NoSQL MongoDB para gerenciamento e persistência de dados através de uma API RESTful.\n\nO projeto implementa o padrão de arquitetura para operações CRUD completas (Create, Read, Update, Delete), oferecendo conexão otimizada com o banco de dados, tratamento de requisições e manipulação eficiente de documentos JSON.",
+      en: "Backend application built with Node.js and MongoDB NoSQL database for data management and persistence via a RESTful API.\n\nThe project implements standard architecture for full CRUD operations (Create, Read, Update, Delete), offering optimized database connection, request handling, and efficient JSON document manipulation.",
+      es: "Aplicación backend desarrollada con Node.js y base de datos NoSQL MongoDB para la gestión y persistencia de datos a través de una API RESTful.\n\nEl proyecto implementa el patrón de arquitectura para operaciones CRUD completas (Create, Read, Update, Delete), ofreciendo conexión optimizada con la base de datos, manejo de solicitudes y manipulación eficiente de documentos JSON."
+    }
+  },
+  {
+    title: {
       pt: "K Database",
       en: "K Database",
       es: "K Database"
@@ -134,7 +163,8 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #1f2937, #111827)",
     image: "/project-kindle-cover.png",
     images: [
-      "/project-kindle-cover.png"
+      "/project-kindle-cover.png",
+      "/project-kindle-interface.png"
     ],
     detailedDesc: {
       pt: "O Leia é um leitor de e-books em PDF executado diretamente no cliente, simulando a experiência de um leitor digital Kindle. Sem banco de dados externo, o web app utiliza o armazenamento local para persistir de forma automática as leituras recentes, a última página visualizada de cada documento e as preferências de modo claro e escuro. Apresenta suporte para modo tela cheia, importação simplificada por arrastar e soltar de arquivos e um histórico interativo.",
