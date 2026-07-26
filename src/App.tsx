@@ -1,5 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import HeroPage from './components/HeroPage';
+import IntroLoader from './components/IntroLoader';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 import { Sun, Moon, Home } from 'lucide-react';
 
@@ -74,8 +75,62 @@ function AppContent() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Smooth scroll handler to target section
+  const scrollToSection = (view: 'inicio' | 'trajetoria' | 'projetos' | 'contato') => {
+    const sectionIdMap: Record<string, string> = {
+      inicio: 'home',
+      trajetoria: 'about',
+      projetos: 'projects',
+      contato: 'contact',
+    };
+    const targetId = sectionIdMap[view] || view;
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  // IntersectionObserver to update active menu link automatically as user scrolls
+  useEffect(() => {
+    const sections = [
+      { id: 'home', view: 'inicio' as const },
+      { id: 'about', view: 'trajetoria' as const },
+      { id: 'projects', view: 'projetos' as const },
+      { id: 'contact', view: 'contato' as const },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const found = sections.find((s) => s.id === entry.target.id);
+            if (found) {
+              setCurrentView(found.view);
+            }
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-30% 0px -50% 0px',
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
+      {/* Intro Preloader Curtain Animation */}
+      <IntroLoader />
+
       {/* ==========================================
            BACKGROUND & SPOTLIGHT
            ========================================== */}
@@ -88,7 +143,7 @@ function AppContent() {
       <header className={`header ${scrolled ? 'scrolled' : ''}`} id="header">
         <div className="container nav-wrapper">
           <button 
-            onClick={() => { setCurrentView('inicio'); setIsMenuOpen(false); }} 
+            onClick={() => scrollToSection('inicio')} 
             className="home-btn" 
             aria-label="Home"
           >
@@ -173,7 +228,7 @@ function AppContent() {
             <li>
               <button
                 className={`drawer-link ${currentView === 'inicio' ? 'active' : ''}`}
-                onClick={() => { setCurrentView('inicio'); setIsMenuOpen(false); }}
+                onClick={() => scrollToSection('inicio')}
               >
                 {t('nav.inicio')}
               </button>
@@ -181,7 +236,7 @@ function AppContent() {
             <li>
               <button
                 className={`drawer-link ${currentView === 'trajetoria' ? 'active' : ''}`}
-                onClick={() => { setCurrentView('trajetoria'); setIsMenuOpen(false); }}
+                onClick={() => scrollToSection('trajetoria')}
               >
                 {t('nav.trajetoria')}
               </button>
@@ -189,7 +244,7 @@ function AppContent() {
             <li>
               <button
                 className={`drawer-link ${currentView === 'projetos' ? 'active' : ''}`}
-                onClick={() => { setCurrentView('projetos'); setIsMenuOpen(false); }}
+                onClick={() => scrollToSection('projetos')}
               >
                 {t('nav.projetos')}
               </button>
@@ -197,7 +252,7 @@ function AppContent() {
             <li>
               <button
                 className={`drawer-link drawer-link-highlight ${currentView === 'contato' ? 'active' : ''}`}
-                onClick={() => { setCurrentView('contato'); setIsMenuOpen(false); }}
+                onClick={() => scrollToSection('contato')}
               >
                 {t('nav.contato')}
               </button>
@@ -207,14 +262,16 @@ function AppContent() {
       </div>
 
       {/* ==========================================
-           PÁGINA ATIVA (RENDER VIEW)
+           PÁGINA INFINITA (TODAS AS SEÇÕES)
            ========================================== */}
-      {currentView === 'inicio' && <HeroPage onNavigate={setCurrentView} />}
-      <Suspense fallback={null}>
-        {currentView === 'trajetoria' && <AboutPage />}
-        {currentView === 'projetos' && <ProjectsPage />}
-        {currentView === 'contato' && <ContactPage />}
-      </Suspense>
+      <main className="main-content">
+        <HeroPage onNavigate={scrollToSection} />
+        <Suspense fallback={null}>
+          <AboutPage />
+          <ProjectsPage />
+          <ContactPage />
+        </Suspense>
+      </main>
     </>
   );
 }

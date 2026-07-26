@@ -245,9 +245,9 @@ export const experiences: Experience[] = [
   },
   {
     period: {
-      pt: "mar de 2025 — O momento",
-      en: "Mar 2025 — Present",
-      es: "mar de 2025 — Presente"
+      pt: "mar de 2025 — jul de 2026",
+      en: "Mar 2025 — Jul 2026",
+      es: "mar de 2025 — jul de 2026"
     },
     role: {
       pt: "Especialista CX",

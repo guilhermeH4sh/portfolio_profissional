@@ -13,41 +13,25 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
   onSelectExperience,
 }) => {
   useEffect(() => {
-    const pageView = document.querySelector('.page-view');
-    if (!pageView) return;
-
     let frameId: number;
-    let timelineOffsetTop = 0;
-    let timelineHeight = 0;
-    let containerHeight = 0;
-
-    const updateDimensions = () => {
-      const timeline = document.querySelector('.timeline-alt');
-      if (timeline && pageView) {
-        const rect = timeline.getBoundingClientRect();
-        const pageRect = pageView.getBoundingClientRect();
-        timelineOffsetTop = rect.top - pageRect.top + pageView.scrollTop;
-        timelineHeight = rect.height;
-        containerHeight = pageRect.height;
-      }
-    };
 
     const handleScroll = () => {
       cancelAnimationFrame(frameId);
       frameId = requestAnimationFrame(() => {
+        const timeline = document.querySelector('.timeline-alt');
         const progressLine = document.querySelector('.timeline-progress-line') as HTMLElement;
-        if (!progressLine) return;
+        if (!timeline || !progressLine) return;
 
-        if (timelineHeight === 0) {
-          updateDimensions();
-        }
+        const rect = timeline.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
 
-        const scrollTop = pageView.scrollTop;
-        const scrolled = (scrollTop + containerHeight / 2) - timelineOffsetTop;
-        
+        // Calculate progress line fill relative to window scroll position
+        const scrolled = (viewportHeight / 2) - rect.top;
+        const timelineHeight = rect.height;
+
         let progress = timelineHeight > 0 ? scrolled / timelineHeight : 0;
         progress = Math.max(0, Math.min(1, progress));
-        
+
         const isMobile = window.innerWidth <= 768;
         progressLine.style.transform = isMobile 
           ? `scaleY(${progress})` 
@@ -55,39 +39,36 @@ const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
       });
     };
 
-    // Calculate dimensions initially
-    updateDimensions();
+    // Setup IntersectionObserver for active card highlight using window viewport
+    const cardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('timeline-card-active');
+          } else {
+            entry.target.classList.remove('timeline-card-active');
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '-35% 0px -35% 0px',
+        threshold: 0.1,
+      }
+    );
 
-    // Observe Scroll & Resize with passive event listeners to avoid blocking paint thread
-    pageView.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', updateDimensions, { passive: true });
-
-    // Setup IntersectionObserver for active card highlight (highlights cards entering middle 10% of viewport)
-    const observerOptions = {
-      root: pageView,
-      rootMargin: '-45% 0px -45% 0px',
-      threshold: 0,
-    };
-
-    const cardObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('timeline-card-active');
-        } else {
-          entry.target.classList.remove('timeline-card-active');
-        }
-      });
-    }, observerOptions);
-
-    const cards = pageView.querySelectorAll('.timeline-row-alt');
+    const cards = document.querySelectorAll('.timeline-row-alt');
     cards.forEach((card) => cardObserver.observe(card));
 
     // Initial trigger
     handleScroll();
 
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+
     return () => {
-      pageView.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', updateDimensions);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
       cards.forEach((card) => cardObserver.unobserve(card));
       cardObserver.disconnect();
       cancelAnimationFrame(frameId);

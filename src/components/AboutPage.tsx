@@ -4,7 +4,7 @@ import { experiences, certificates, Experience, Certificate } from '../data/port
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
-import ExperienceTimeline from './ExperienceTimeline';
+import CareerBentoGrid from './CareerBentoGrid';
 import CertificatesSection from './CertificatesSection';
 import ExperienceModal from './ExperienceModal';
 import CertificateModal from './CertificateModal';
@@ -52,7 +52,7 @@ const AboutPage: React.FC = () => {
                   <span className="about-stat-label">{t('about.stats.certs')}</span>
                 </div>
                 <div className="about-stat reveal" style={{ transitionDelay: '400ms' }}>
-                  <span className="about-stat-number">4</span>
+                  <span className="about-stat-number">{experiences.length}</span>
                   <span className="about-stat-label">{t('about.stats.roles')}</span>
                 </div>
               </div>
@@ -111,9 +111,9 @@ const AboutPage: React.FC = () => {
           {/* Scrollable Tab Content Container */}
           <div className="about-tab-content-wrapper">
             
-            {/* TAB: EXPERIÊNCIA (Timeline) */}
+            {/* TAB: EXPERIÊNCIA (Disruptive Bento Grid) */}
             {activeTab === 'experiencia' && (
-              <ExperienceTimeline
+              <CareerBentoGrid
                 experiences={experiences}
                 language={language}
                 onSelectExperience={setSelectedExperience}

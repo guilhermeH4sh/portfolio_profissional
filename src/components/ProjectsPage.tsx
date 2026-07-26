@@ -151,8 +151,8 @@ const ProjectsPage: React.FC = () => {
                 onTransitionEnd={handleTransitionEnd}
                 style={{
                   transform: filteredProjects.length > 1
-                    ? `translateX(calc(50% - (var(--slide-width) / 2) - ${currentIndex} * (var(--slide-width) + var(--slide-gap))))`
-                    : `translateX(calc(50% - (var(--slide-width) / 2)))`,
+                    ? `translateX(calc(50vw - (var(--slide-width) / 2) - ${currentIndex} * (var(--slide-width) + var(--slide-gap))))`
+                    : `translateX(calc(50vw - (var(--slide-width) / 2)))`,
                   transition: isTransitioning ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'none'
                 }}
               >
