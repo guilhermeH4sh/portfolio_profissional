@@ -38,6 +38,34 @@ function AppContent() {
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
 
+  // Dynamic Viewport Height (--vh) for mobile browser address bar handling & ScrollTrigger/Lenis sync
+  useEffect(() => {
+    const updateVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      // Refresh ScrollTrigger and Lenis if present
+      if (typeof window !== 'undefined') {
+        const win = window as any;
+        if (win.ScrollTrigger && typeof win.ScrollTrigger.refresh === 'function') {
+          win.ScrollTrigger.refresh();
+        }
+        if (win.lenis && typeof win.lenis.resize === 'function') {
+          win.lenis.resize();
+        }
+      }
+    };
+
+    updateVh();
+    window.addEventListener('resize', updateVh);
+    window.addEventListener('orientationchange', updateVh);
+
+    return () => {
+      window.removeEventListener('resize', updateVh);
+      window.removeEventListener('orientationchange', updateVh);
+    };
+  }, []);
+
   // Mouse Position Tracker (Updates CSS variables directly on the grid-glow element to limit style recalculations)
   // Skipped on touch devices to improve mobile performance
   useEffect(() => {
