@@ -49,9 +49,9 @@ export const projects: Project[] = [
     category: "fullstack",
     tech: ["Next.js", "React", "TypeScript", "Tailwind", "Node.js"],
     desc: {
-      pt: "Plataforma corporativa inteligente projetada para otimizar fluxos de trabalho e integrar soluções baseadas em inteligência artificial para automatizar tarefas cotidianas.",
-      en: "Intelligent corporate platform designed to optimize workflows and integrate artificial intelligence solutions to automate daily tasks.",
-      es: "Plataforma corporativa inteligente diseñada para optimizar los flujos de trabalho e integrar soluciones de inteligencia artificial para automatizar las tareas cotidianas."
+      pt: "Plataforma fullstack em Next.js, React e TypeScript com rotas de API em Node.js e estilização Tailwind para automação de processos via Inteligência Artificial.",
+      en: "Fullstack platform built with Next.js, React, and TypeScript featuring Node.js API routes and Tailwind CSS for AI-driven workflow automation.",
+      es: "Plataforma fullstack construida con Next.js, React y TypeScript con rutas API en Node.js y Tailwind CSS para la automatización de procesos mediante IA."
     },
     demoUrl: "https://workyy.vercel.app",
     icon: <Briefcase className="w-12 h-12 text-white" />,
@@ -63,7 +63,12 @@ export const projects: Project[] = [
       "/project-worky-personas.png",
       "/project-worky-ods.png",
       "/project-worky-links.png"
-    ]
+    ],
+    detailedDesc: {
+      pt: "Plataforma corporativa fullstack desenvolvida com Next.js, React e TypeScript no front-end, integrada a rotas de servidor e serviços em Node.js.\n\nA arquitetura utiliza componentes modulares com Tailwind CSS para garantir responsividade e alto desempenho. O sistema orquestra APIs RESTful e serviços de Inteligência Artificial para automatizar fluxos de trabalho e otimizar processos operacionais em tempo real.",
+      en: "Corporate fullstack platform developed with Next.js, React, and TypeScript on the front-end, integrated with server routes and Node.js backend services.\n\nThe architecture leverages modular components styled with Tailwind CSS to ensure responsiveness and high performance. The system orchestrates RESTful APIs and AI services to automate workflows and optimize operational processes in real time.",
+      es: "Plataforma corporativa fullstack desarrollada con Next.js, React y TypeScript en el front-end, integrada con rutas de servidor y servicios en Node.js.\n\nLa arquitectura utiliza componentes modulares con Tailwind CSS para garantizar capacidad de respuesta y alto rendimiento. El sistema orquesta APIs RESTful y servicios de IA para automatizar flujos de trabajo y optimizar procesos operativos en tiempo real."
+    }
   },
   {
     title: {
@@ -74,18 +79,18 @@ export const projects: Project[] = [
     category: "backend",
     tech: ["Python", "Streamlit", "RAG", "LangChain"],
     desc: {
-      pt: "Chatbot acadêmico inteligente que responde dúvidas de estudantes utilizando exclusivamente materiais oficiais da instituição, como planos de ensino, ementas e regulamentos.",
-      en: "Intelligent academic chatbot that answers student questions using exclusively official institution materials, such as syllabus, course outlines and regulations.",
-      es: "Chatbot académico inteligente que responde a las dudas de los estudiantes utilizando exclusivamente materiales oficiales de la institución, como planes de estudio, programas y reglamentos."
+      pt: "Chatbot acadêmico desenvolvido em Python e Streamlit, baseado em arquitetura RAG com LangChain para consultas precisas a documentos institucionais.",
+      en: "Academic chatbot built with Python and Streamlit, powered by RAG architecture and LangChain for precise querying of institutional documents.",
+      es: "Chatbot académico desarrollado con Python y Streamlit, impulsado por arquitectura RAG y LangChain para consultas precisas de documentos institucionales."
     },
     icon: <GraduationCap className="w-12 h-12 text-white" />,
     gradient: "linear-gradient(135deg, #18181b, #09090b)",
     image: "/project-linkedu-1.png",
     images: ["/project-linkedu-1.png", "/project-linkedu-2.png", "/project-linkedu-3.png", "/project-linkedu-4.png"],
     detailedDesc: {
-      pt: "O LinkEdu é um chatbot acadêmico inteligente projetado para responder a dúvidas de estudantes utilizando exclusivamente materiais oficiais da instituição (como planos de ensino, ementas e regulamentos).\n\nBaseado na arquitetura RAG (Retrieval-Augmented Generation), o sistema garante:\n✅ Respostas precisas e altamente confiáveis\n✅ Citação exata do arquivo e da página de origem\n✅ Organização inteligente por curso, semestre e disciplina\n✅ Conformidade total com a LGPD\n\nO grande objetivo do projeto é oferecer total autonomia de consulta ao aluno, enquanto reduz drasticamente a sobrecarga de professores e da coordenação acadêmica.",
-      en: "LinkEdu is an intelligent academic chatbot designed to answer student questions using exclusively official institution materials (such as syllabus, course outlines, and regulations).\n\nBased on RAG (Retrieval-Augmented Generation) architecture, the system guarantees:\n✅ Precise and highly reliable answers\n✅ Exact citation of the source file and page\n✅ Smart organization by course, semester, and subject\n✅ Full compliance with LGPD regulations\n\nThe project's main goal is to offer students complete query autonomy, while drastically reducing the workload of professors and academic coordination.",
-      es: "LinkEdu es un chatbot académico inteligente diseñado para responder a las dudas de los estudiantes utilizando exclusivamente materiales oficiales de la institución (como planes de estudio, programas y reglamentos).\n\nBasado en la arquitectura RAG (Retrieval-Augmented Generation), el sistema garantiza:\n✅ Respuestas precisas y altamente confiables\n✅ Citación exacta del archivo y página de origen\n✅ Organización inteligente por carrera, semestre y asignatura\n✅ Cumplimiento total con la LGPD\n\nEl gran objetivo del proyecto es ofrecer total autonomía de consulta al estudiante, al mismo tiempo que reduce drásticamente la sobrecarga de los profesores y la de coordinación académica."
+      pt: "Aplicação de IA generativa desenvolvida em Python com interface interativa em Streamlit, utilizando o framework LangChain para orquestrar embeddings e vetores.\n\nA arquitetura RAG (Retrieval-Augmented Generation) processa arquivos institucionais em PDF de forma assíncrona. O sistema executa busca vetorial semântica e recupera respostas com citação exata de fontes, garantindo conformidade com a LGPD e alta precisão.",
+      en: "Generative AI application developed in Python with an interactive Streamlit interface, using the LangChain framework to orchestrate embeddings and vector stores.\n\nThe RAG (Retrieval-Augmented Generation) architecture processes institutional PDF documents asynchronously. The system executes semantic vector search and retrieves answers with exact source citations, ensuring LGPD compliance and high precision.",
+      es: "Aplicación de IA generativa desarrollada en Python con una interfaz interactiva en Streamlit, utilizando el framework LangChain para orquestar embeddings y vectores.\n\nLa arquitectura RAG (Retrieval-Augmented Generation) procesa archivos institucionales en PDF de forma asíncrona. El sistema ejecuta búsqueda vectorial semántica y recupera respuestas con citación exacta de fuentes, garantizando cumplimiento de la LGPD."
     }
   },
   {
@@ -97,9 +102,9 @@ export const projects: Project[] = [
     category: "backend",
     tech: ["Node.js", "MongoDB", "JavaScript", "Express"],
     desc: {
-      pt: "Sistema de gerenciamento de dados com operações CRUD completas (Create, Read, Update, Delete) desenvolvido com Node.js e MongoDB.",
-      en: "Data management system with complete CRUD operations (Create, Read, Update, Delete) built with Node.js and MongoDB.",
-      es: "Sistema de gestión de datos con operaciones CRUD completas (Create, Read, Update, Delete) desarrollado con Node.js y MongoDB."
+      pt: "API RESTful backend construída em Node.js e Express com banco de dados NoSQL MongoDB para execução de operações CRUD completas e validação de dados.",
+      en: "RESTful backend API built with Node.js and Express coupled with MongoDB NoSQL database for full CRUD operations and data validation.",
+      es: "API RESTful backend construida con Node.js y Express junto con base de datos NoSQL MongoDB para operaciones CRUD completas y validación de datos."
     },
     githubUrl: "https://github.com/guilhermeH4sh/crud_node.js-mongodb",
     icon: <Database className="w-12 h-12 text-white" />,
@@ -112,9 +117,9 @@ export const projects: Project[] = [
       "/project-crud-mongodb-atlas.png"
     ],
     detailedDesc: {
-      pt: "Aplicação backend desenvolvida com Node.js e banco de dados NoSQL MongoDB para gerenciamento e persistência de dados através de uma API RESTful.\n\nO projeto implementa o padrão de arquitetura para operações CRUD completas (Create, Read, Update, Delete), oferecendo conexão otimizada com o banco de dados, tratamento de requisições e manipulação eficiente de documentos JSON.",
-      en: "Backend application built with Node.js and MongoDB NoSQL database for data management and persistence via a RESTful API.\n\nThe project implements standard architecture for full CRUD operations (Create, Read, Update, Delete), offering optimized database connection, request handling, and efficient JSON document manipulation.",
-      es: "Aplicación backend desarrollada con Node.js y base de datos NoSQL MongoDB para la gestión y persistencia de datos a través de una API RESTful.\n\nEl proyecto implementa el patrón de arquitectura para operaciones CRUD completas (Create, Read, Update, Delete), ofreciendo conexión optimizada con la base de datos, manejo de solicitudes y manipulación eficiente de documentos JSON."
+      pt: "Aplicação backend de alta performance construída em Node.js e Express (ES6+), estruturada sob o padrão arquitetural MVC para operações RESTful completas.\n\nO sistema realiza conexão assíncrona com banco de dados NoSQL MongoDB via Mongoose ORM. Implementa controladores modulares, tratamento de rotas, middlewares de validação de esquemas e manipulação eficiente de documentos JSON com foco em escalabilidade.",
+      en: "High-performance backend application built with Node.js and Express (ES6+), structured under the MVC architectural pattern for complete RESTful operations.\n\nThe system establishes asynchronous connections to a MongoDB NoSQL database via Mongoose ORM. It features modular controllers, route handling, schema validation middlewares, and efficient JSON document manipulation focused on scalability.",
+      es: "Aplicación backend de alto rendimiento construida con Node.js y Express (ES6+), estructurada bajo el patrón arquitectónico MVC para operaciones RESTful completas.\n\nEl sistema establece conexiones asíncronas con base de datos NoSQL MongoDB a través de Mongoose ORM. Implementa controladores modulares, manejo de rutas, middlewares de validación y manipulación eficiente de documentos JSON con enfoque en escalabilidad."
     }
   },
   {
@@ -126,9 +131,9 @@ export const projects: Project[] = [
     category: "frontend",
     tech: ["HTML5", "CSS3", "JavaScript", "GSAP"],
     desc: {
-      pt: "Sistema de catálogo de softwares corporativos que centraliza informações sobre licenças, descrições e validades dos sistemas utilizados pela empresa.",
-      en: "Enterprise software catalog system that centralizes information about licenses, descriptions and validity of systems used by the company.",
-      es: "Sistema de catálogo de software corporativo que centraliza información sobre licencias, descripciones y validez de los sistemas utilizados por la empresa."
+      pt: "Catálogo corporativo desenvolvido com HTML5 semântico, CSS3 e JavaScript ES6+, utilizando GSAP para animações interativas e filtros de busca em tempo real.",
+      en: "Enterprise software catalog built with semantic HTML5, CSS3, and JavaScript ES6+, using GSAP for interactive animations and real-time search filtering.",
+      es: "Catálogo corporativo desarrollado con HTML5 semántico, CSS3 y JavaScript ES6+, utilizando GSAP para animaciones interactivas y filtros en tiempo real."
     },
     githubUrl: "https://github.com/guilhermeH4sh/K_software",
     demoUrl: "https://guilhermeh4sh.github.io/K_software/",
@@ -139,9 +144,9 @@ export const projects: Project[] = [
       "/project-kdatabase-cover.png"
     ],
     detailedDesc: {
-      pt: "Sistema de catálogo de softwares corporativos centralizado, focado na gestão visual de licenças, validades e descrições dos sistemas corporativos.\n\nO projeto foi construído utilizando tecnologias web fundamentais como HTML5 semântico e CSS3 estruturado com variáveis customizadas para gerenciar os temas. Toda a lógica da interface, filtragem e manipulação de dados é controlada de forma assíncrona por meio de JavaScript moderno (ES6+).\n\nPara proporcionar uma experiência fluida ao usuário, o site conta com animações integradas ao scroll da página e transições de entrada por meio do GSAP (GreenSock) e seu plugin ScrollTrigger. O sistema também possui um motor de busca em tempo real que lê o nome, descrição e etiquetas de cada item, além de filtros dinâmicos que identificam o vencimento da licença e ordenam os resultados. A escolha de tema claro ou escuro é feita dinamicamente e persistida de forma simples através do LocalStorage do navegador, enquanto a responsividade do layout é garantida pelo uso combinado de Flexbox e CSS Grid.",
-      en: "Centralized corporate software catalog system focused on visual management of licenses, expiration dates, and descriptions of corporate systems.\n\nThe application was built using fundamental web technologies, including semantic HTML5 and modular CSS3 with custom properties for theme management. All interface logic, asynchronous data operations, and interactive behaviors are written in modern JavaScript (ES6+).\n\nTo create a fluid user experience, the website features high-performance scroll-triggered animations and entry transitions powered by GSAP (GreenSock) and ScrollTrigger. It includes a real-time search engine that parses names, descriptions, and tags, alongside dynamic filters that calculate license status and sort the results. The light/dark theme preference is toggled dynamically and persisted using browser LocalStorage, while responsiveness across devices is handled natively through CSS Grid and Flexbox.",
-      es: "Sistema centralizado de catálogo de software corporativo, enfocado en la gestión visual de licencias, fechas de vencimiento y descripciones de los sistemas de la empresa.\n\nLa aplicación fue desarrollada utilizando tecnologías web esenciales como HTML5 semántico y CSS3 estructurado con variables personalizadas para la gestión de temas. Toda la lógica de la interfaz, el filtrado y el manejo asíncrono de datos están controlados mediante JavaScript moderno (ES6+).\n\nPara ofrecer una experiencia de usuario fluida, el sitio cuenta con animaciones e interacciones de desplazamiento de alto rendimiento integradas con GSAP (GreenSock) y ScrollTrigger. Dispone de un buscador en tiempo real que analiza nombres, descripciones y etiquetas, junto con filtros dinámicos que calculan el estado de validez de cada licencia. La selección de tema claro u oscuro se gestiona de forma dinámica y se guarda directamente a través del LocalStorage del navegador, mientras que la adaptabilidad del diseño está garantizada mediante el uso combinado de Flexbox y CSS Grid."
+      pt: "Sistema de catálogo corporativo desenvolvido com HTML5 semântico, CSS3 estruturado com variáveis customizadas para temas e JavaScript moderno (ES6+).\n\nA interface integra o motor de animações GSAP com o plugin ScrollTrigger para criar transições suaves orientadas ao scroll. Possui um algoritmo de busca assíncrona em tempo real e filtros dinâmicos com persistência de dados e preferências no LocalStorage.",
+      en: "Enterprise software catalog system developed with semantic HTML5, modular CSS3 using custom properties for theme management, and modern JavaScript (ES6+).\n\nThe interface integrates the GSAP animation engine with the ScrollTrigger plugin to deliver smooth scroll-driven transitions. It includes a real-time asynchronous search algorithm and dynamic filters with state persistence via LocalStorage.",
+      es: "Sistema de catálogo corporativo desarrollado con HTML5 semántico, CSS3 estructurado con variables personalizadas para temas y JavaScript moderno (ES6+).\n\nLa interfaz integra el motor de animaciones GSAP con el plugin ScrollTrigger para crear transiciones suaves orientadas al desplazamiento. Incluye un algoritmo de búsqueda asíncrona en tiempo real y filtros dinámicos con persistencia en LocalStorage."
     }
   },
   {
@@ -153,9 +158,9 @@ export const projects: Project[] = [
     category: "frontend",
     tech: ["React", "TypeScript", "Tailwind", "Vite", "Memória"],
     desc: {
-      pt: "Leitor de livros digitais em formato PDF executado diretamente no navegador com suporte a temas e salvamento automático do progresso de leitura.",
-      en: "Digital book reader in PDF format running directly in the browser featuring theme support and automatic reading progress saving.",
-      es: "Lector de libros digitales en formato PDF que se ejecuta directamente en el navegador con soporte para temas y guardado automático del progreso."
+      pt: "Web app de leitura de e-books PDF desenvolvido em React, TypeScript e Vite com Tailwind CSS e armazenamento local para persistência de progresso.",
+      en: "E-book PDF reader web app built with React, TypeScript, and Vite featuring Tailwind CSS and client-side storage for reading progress persistence.",
+      es: "Aplicación web de lectura de e-books PDF desarrollada con React, TypeScript y Vite con Tailwind CSS y almacenamiento local para persistencia."
     },
     githubUrl: "https://github.com/guilhermeH4sh/kindle",
     demoUrl: "https://kindle-chi.vercel.app",
@@ -167,9 +172,9 @@ export const projects: Project[] = [
       "/project-kindle-interface.png"
     ],
     detailedDesc: {
-      pt: "O Leia é um leitor de e-books em PDF executado diretamente no cliente, simulando a experiência de um leitor digital Kindle. Sem banco de dados externo, o web app utiliza o armazenamento local para persistir de forma automática as leituras recentes, a última página visualizada de cada documento e as preferências de modo claro e escuro. Apresenta suporte para modo tela cheia, importação simplificada por arrastar e soltar de arquivos e um histórico interativo.",
-      en: "Leia is a client-side PDF e-reader simulating the experience of a Kindle digital reader. Without an external database, the web app uses local storage to automatically persist recent readings, the last viewed page of each document, and light/dark mode preferences. It supports full-screen mode, simplified drag-and-drop file import, and an interactive history.",
-      es: "Leia es un lector de e-books en PDF que se ejecuta directamente en el cliente, simulando la experiencia de un lector digital Kindle. Sin base de datos externa, la aplicación utiliza el almacenamiento local para guardar automáticamente las lecturas recientes, la última página visualizada de cada documento y las preferencias de modo claro y oscuro. Ofrece visualización en pantalla completa, importación simplificada de archivos al arrastrarlos y un historial interactivo."
+      pt: "Leitor de documentos PDF em ambiente web desenvolvido com React, TypeScript e Vite, estilizado com utility-first classes do Tailwind CSS.\n\nO aplicativo executa renderização client-side sem dependência de backend externo. Utiliza a Web Storage API (LocalStorage) para salvar assincronamente a última página lida, histórico de arquivos importados por drag-and-drop e alternância de temas com alta performance.",
+      en: "Web-based PDF document reader application developed with React, TypeScript, and Vite, styled using Tailwind CSS utility-first architecture.\n\nThe application performs client-side rendering without external backend dependencies. It utilizes the Web Storage API (LocalStorage) to asynchronously persist reading progress, drag-and-drop file history, and theme preferences with high performance.",
+      es: "Aplicación de lectura de documentos PDF en entorno web desarrollada con React, TypeScript y Vite, diseñada con clases de utilidad de Tailwind CSS.\n\nLa aplicación ejecuta renderizado del lado del cliente sin dependencias de servidor externo. Utiliza Web Storage API (LocalStorage) para guardar de forma asíncrona el progreso de lectura, historial de archivos y cambio de temas con alto rendimiento."
     }
   }
 ];
