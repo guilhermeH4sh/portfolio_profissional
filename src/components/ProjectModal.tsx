@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { X, ChevronLeft, ChevronRight, Github, ExternalLink } from 'lucide-react';
 import { Project } from '../data/portfolioData';
 
@@ -37,18 +38,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
     ? project.detailedDesc[language]
     : project.desc[language];
 
-  return (
+  return createPortal(
     <div className="project-modal-overlay" onClick={onClose}>
       <div className="project-modal-content" onClick={(e) => e.stopPropagation()}>
-        <button 
-          className="experience-modal-close"
-          style={{ top: '1.25rem', right: '1.25rem' }}
-          onClick={onClose}
-          aria-label={t('modal.close') || 'Fechar'}
-        >
-          <X size={20} />
-        </button>
-
         {images.length > 0 ? (
           <div className="project-modal-left">
             <div className="project-modal-slider-viewport">
@@ -62,16 +54,17 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
 
               {images.length > 1 && (
                 <>
-                  <button className="project-modal-slider-btn prev" onClick={handlePrev} aria-label="Anterior">
+                  <button className="project-modal-slider-btn prev" type="button" onClick={handlePrev} aria-label="Anterior">
                     <ChevronLeft size={20} />
                   </button>
-                  <button className="project-modal-slider-btn next" onClick={handleNext} aria-label="Próximo">
+                  <button className="project-modal-slider-btn next" type="button" onClick={handleNext} aria-label="Próximo">
                     <ChevronRight size={20} />
                   </button>
                   <div className="project-modal-dots">
                     {images.map((_, idx) => (
                       <button
                         key={idx}
+                        type="button"
                         className={`project-modal-dot ${idx === currentImgIndex ? 'active' : ''}`}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -93,9 +86,22 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
         )}
 
-        <div className="project-modal-right">
+        <div className="project-modal-right" style={{ position: 'relative' }}>
+          <button 
+            type="button"
+            className="experience-modal-close"
+            style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', zIndex: 20 }}
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            aria-label={t('modal.close') || 'Fechar'}
+          >
+            <X size={20} />
+          </button>
+
           <div>
-            <div className="project-modal-header">
+            <div className="project-modal-header" style={{ paddingRight: '2.5rem' }}>
               <h3 className="project-modal-title">{project.title[language]}</h3>
               <div className="project-modal-tech">
                 {project.tech.map((techItem, idx) => (
@@ -112,7 +118,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
 
           <div className="project-modal-footer">
-            <button className="project-modal-close-btn" onClick={onClose}>
+            <button 
+              type="button"
+              className="project-modal-close-btn" 
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+            >
               {language === 'en' ? 'Close' : language === 'es' ? 'Cerrar' : 'Fechar'}
             </button>
             <div className="project-modal-links">
@@ -144,7 +157,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

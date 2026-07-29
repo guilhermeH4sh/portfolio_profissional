@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Mail, Github, Linkedin, X, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -92,7 +93,7 @@ const ContactPage: React.FC = () => {
       </section>
 
       {/* Form Modal */}
-      {isFormOpen && (
+      {isFormOpen && createPortal(
         <div className="contact-modal-overlay" onClick={handleClose}>
           <div className="contact-modal-content" onClick={(e) => e.stopPropagation()}>
             {status !== 'success' && status !== 'error' && (
@@ -143,12 +144,11 @@ const ContactPage: React.FC = () => {
                     <input
                       id="contact-name"
                       type="text"
-                      className="form-input"
                       required
-                      placeholder={t('contact.form.placeholder.name')}
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      disabled={status === 'loading'}
+                      className="form-input"
+                      placeholder={language === 'en' ? 'John Doe' : language === 'es' ? 'Juan Pérez' : 'Seu nome'}
                     />
                   </div>
 
@@ -159,12 +159,11 @@ const ContactPage: React.FC = () => {
                     <input
                       id="contact-email"
                       type="email"
-                      className="form-input"
                       required
-                      placeholder={t('contact.form.placeholder.email')}
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      disabled={status === 'loading'}
+                      className="form-input"
+                      placeholder={language === 'en' ? 'john@example.com' : language === 'es' ? 'juan@ejemplo.com' : 'seu.email@exemplo.com'}
                     />
                   </div>
 
@@ -174,29 +173,25 @@ const ContactPage: React.FC = () => {
                     </label>
                     <textarea
                       id="contact-message"
-                      className="form-textarea"
                       required
-                      placeholder={t('contact.form.placeholder.message')}
+                      rows={4}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      disabled={status === 'loading'}
+                      className="form-input form-textarea"
+                      placeholder={language === 'en' ? 'Tell me about your project...' : language === 'es' ? 'Cuéntame sobre tu proyecto...' : 'Conte-me sobre seu projeto...'}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="contact-submit-btn"
                     disabled={status === 'loading'}
+                    className="contact-submit-btn"
                   >
                     {status === 'loading' ? (
-                      <>
-                        <div className="spinner"></div>
-                        {t('contact.form.sending')}
-                      </>
+                      <span className="submit-loading">{t('contact.form.sending')}</span>
                     ) : (
                       <>
-                        <Mail size={18} />
-                        {t('contact.form.btn')}
+                        <Mail size={16} /> {t('contact.form.submit')}
                       </>
                     )}
                   </button>
@@ -204,7 +199,8 @@ const ContactPage: React.FC = () => {
               </>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Integrated Footer in Contact Page */}

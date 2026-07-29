@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { Experience } from '../data/portfolioData';
 
@@ -15,7 +16,7 @@ const ExperienceModal: React.FC<ExperienceModalProps> = ({
   language,
   t,
 }) => {
-  return (
+  return createPortal(
     <div className="experience-modal-overlay" onClick={onClose}>
       <div className="experience-modal-content" onClick={(e) => e.stopPropagation()}>
         <button 
@@ -38,7 +39,8 @@ const ExperienceModal: React.FC<ExperienceModalProps> = ({
           <p>{experience.sectorDesc[language]}</p>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

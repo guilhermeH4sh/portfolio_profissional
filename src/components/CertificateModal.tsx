@@ -1,4 +1,5 @@
 import React from 'react';
+import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { Certificate } from '../data/portfolioData';
 
@@ -25,7 +26,7 @@ const CertificateModal: React.FC<CertificateModalProps> = ({
                   certificate.fileUrl.endsWith('.svg') || 
                   certificate.fileUrl.endsWith('.gif');
 
-  return (
+  return createPortal(
     <div className="experience-modal-overlay" onClick={onClose}>
       <div className="experience-modal-content certificate-modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="certificate-modal-header">
@@ -63,7 +64,8 @@ const CertificateModal: React.FC<CertificateModalProps> = ({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
