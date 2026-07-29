@@ -263,6 +263,10 @@ select {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+body.modal-open {
+  overflow: hidden !important;
+}
+
 body.modal-open .header {
   opacity: 0;
   pointer-events: none;
@@ -276,6 +280,9 @@ body.modal-open .header {
   justify-content: space-between;
   align-items: center;
   height: 4.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .avatar-link {
@@ -285,10 +292,21 @@ body.modal-open .header {
   transition: var(--transition-smooth);
 }
 
-/* Alinha o botão Home para a esquerda no desktop para alinhar perfeitamente com o botão 'Ver Portfólio' */
+/* Alinha o container do header e o botão Home exatamente no mesmo eixo X que a Hero section */
 @media (min-width: 1025px) {
+  .nav-wrapper {
+    max-width: 1280px;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
   .home-btn {
     margin-left: -60px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav-wrapper {
+    max-width: 1400px;
   }
 }
 
@@ -1228,9 +1246,8 @@ body.modal-open .header {
   padding: 3.5rem 0;
   margin-top: -1.5rem;
   margin-bottom: -1.5rem;
-  /* Efeito de fade-out suave nas extremidades da tela */
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 
 .projects-carousel-track {
@@ -1245,23 +1262,22 @@ body.modal-open .header {
   margin-right: var(--slide-gap);
   opacity: 0.45; /* Aumentado ligeiramente para garantir leitura do card lateral */
   transform: scale(0.92); /* Redução sutil nos cards laterais */
-  filter: blur(1.5px) grayscale(20%); /* Desfoque sutil nos cards adjacentes para direcionar o foco */
+  filter: none; /* Desfoque removido */
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-              filter 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+              opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
 
 .projects-carousel-slide.active {
   opacity: 1;
   transform: scale(1.03); /* Card ativo em destaque maior */
-  filter: blur(0) grayscale(0);
+  filter: none;
   cursor: default;
 }
 
 .projects-carousel-slide.active .project-card {
   border-color: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 255, 255, 0.05);
+  box-shadow: none;
 }
 
 .projects-carousel-slide .project-card {
@@ -1419,14 +1435,14 @@ body.modal-open .header {
     --slide-gap: 1rem;
   }
   .projects-carousel-viewport {
-    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 }
 
 .project-card {
   background: rgba(15, 15, 18, 0.5);
-  backdrop-filter: blur(8px);
+  backdrop-filter: none;
   border: 1px solid var(--border-light);
   border-radius: 4px;
   overflow: hidden;
@@ -1469,11 +1485,7 @@ body.modal-open .header {
 }
 
 .project-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
-  opacity: 0.3; /* Reduzido opacidade do overlay para dar total clareza à capa do projeto */
-  pointer-events: none;
+  display: none;
 }
 
 .project-links {
@@ -2442,7 +2454,7 @@ html.light .timeline-row-alt.timeline-card-active .timeline-content-alt {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 10000;
+  z-index: 999999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3386,17 +3398,41 @@ html.light .prouni-badge {
 html.light .project-card {
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: none;
 }
 
 html.light .project-card:hover {
-  background: #f8f9fa;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  box-shadow: none;
 }
 
 html.light .projects-carousel-slide.active .project-card {
   border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.12);
+  box-shadow: none;
+}
+
+html.light .project-image-wrapper {
+  background: #09090b;
+}
+
+html.light .project-tech-icon-wrapper {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+html.light .project-tech-icon-wrapper:hover {
+  background: rgba(0, 0, 0, 0.12);
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+html.light .project-tech-icon-text {
+  color: #18181b;
+  font-weight: 700;
+}
+
+html.light .project-tech-icon {
+  opacity: 0.95;
+  filter: invert(1);
 }
 
 html.light .project-view-more {
@@ -3598,7 +3634,7 @@ html.light .drawer-container {
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 10000;
+  z-index: 999999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
