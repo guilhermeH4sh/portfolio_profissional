@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Database, Briefcase, BookOpen } from 'lucide-react';
+import { GraduationCap, Database, Briefcase, BookOpen, Gamepad2 } from 'lucide-react';
 
 export interface Project {
   title: { pt: string; en: string; es: string; };
@@ -175,6 +175,33 @@ export const projects: Project[] = [
       pt: "Leitor de documentos PDF em ambiente web desenvolvido com React, TypeScript e Vite, estilizado com utility-first classes do Tailwind CSS.\n\nO aplicativo executa renderização client-side sem dependência de backend externo. Utiliza a Web Storage API (LocalStorage) para salvar assincronamente a última página lida, histórico de arquivos importados por drag-and-drop e alternância de temas com alta performance.",
       en: "Web-based PDF document reader application developed with React, TypeScript, and Vite, styled using Tailwind CSS utility-first architecture.\n\nThe application performs client-side rendering without external backend dependencies. It utilizes the Web Storage API (LocalStorage) to asynchronously persist reading progress, drag-and-drop file history, and theme preferences with high performance.",
       es: "Aplicación de lectura de documentos PDF en entorno web desarrollada con React, TypeScript y Vite, diseñada con clases de utilidad de Tailwind CSS.\n\nLa aplicación ejecuta renderizado del lado del cliente sin dependencias de servidor externo. Utiliza Web Storage API (LocalStorage) para guardar de forma asíncrona el progreso de lectura, historial de archivos y cambio de temas con alto rendimiento."
+    }
+  },
+  {
+    title: {
+      pt: "Jogo do Mario",
+      en: "Mario Game",
+      es: "Juego de Mario"
+    },
+    category: "frontend",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    desc: {
+      pt: "Um simples projeto para treinar programação Javascript.",
+      en: "A simple project to practice JavaScript programming.",
+      es: "Un simples proyecto para entrenar programación JavaScript."
+    },
+    githubUrl: "https://github.com/guilhermeH4sh/jogo-do-mario",
+    demoUrl: "https://guilhermeh4sh.github.io/jogo-do-mario/",
+    icon: <Gamepad2 className="w-12 h-12 text-white" />,
+    gradient: "linear-gradient(135deg, #b91c1c, #15803d)",
+    image: "/project-mario-gameover.png",
+    images: [
+      "/project-mario-gameover.png"
+    ],
+    detailedDesc: {
+      pt: "Jogo do Mario desenvolvido com HTML, CSS e JavaScript. Um simples projeto para treinar programação Javascript, explorando manipulação da DOM, escuta de eventos do teclado e lógicas de animação e colisão no navegador.",
+      en: "Mario game built with HTML, CSS, and JavaScript. A simple project to practice JavaScript programming, exploring DOM manipulation, keyboard event listeners, and browser animation/collision logic.",
+      es: "Juego de Mario desarrollado con HTML, CSS y JavaScript. Un simples proyecto para entrenar programación JavaScript, explorando manipulación del DOM, eventos de teclado y lógica de animación y colisión."
     }
   }
 ];
